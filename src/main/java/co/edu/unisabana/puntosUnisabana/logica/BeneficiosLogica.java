@@ -30,6 +30,7 @@ public class BeneficiosLogica {
     public void guardarBeneficio(BeneficioDTO beneficioDTO) {
         BeneficioModelo beneficio = new BeneficioModelo();
         beneficio.setNombreBeneficio(beneficioDTO.getNombreBeneficio());
+        beneficio.setPuntosRequeridos(beneficioDTO.getPuntosRequeridos());
         beneficio.setCliente(null);
         beneficioRepository.save(beneficio);
     }
