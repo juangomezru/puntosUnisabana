@@ -10,6 +10,7 @@ import java.util.List;
 public class BeneficioModelo {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private int id;
 

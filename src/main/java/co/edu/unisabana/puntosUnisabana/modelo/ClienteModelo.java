@@ -7,8 +7,7 @@ import java.util.List;
 
 @Entity
 @Data
-public class ClienteModelo
-{
+public class ClienteModelo {
     @Id
     @Column
     private int cedula;
@@ -18,7 +17,7 @@ public class ClienteModelo
     private String email;
 
     @ManyToMany
-    @JoinTable(name = "cliente_beneficio",joinColumns = @JoinColumn(name = "cliente_id"),inverseJoinColumns = @JoinColumn(name = "beneficio_id"))
+    @JoinTable(name = "cliente_beneficio", joinColumns = @JoinColumn(name = "cliente_id"), inverseJoinColumns = @JoinColumn(name = "beneficio_id"))
     private List<BeneficioModelo> beneficios;
 
 

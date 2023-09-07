@@ -25,7 +25,7 @@ public class ClienteController {
 
     }
     @PutMapping(path = "/cliente/redimir")
-    public RespuestaDTO remdimirBeneficio(@RequestBody int cedulaCliente,@RequestBody int idBeneficio){
+    public RespuestaDTO redimirBeneficio(@RequestBody int cedulaCliente,@RequestBody int idBeneficio){
         try {
             clienteLogica.redimirBeneficio(cedulaCliente, idBeneficio);
             return new RespuestaDTO("Beneficio se pudo redimir");

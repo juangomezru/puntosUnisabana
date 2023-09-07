@@ -7,7 +7,9 @@ import co.edu.unisabana.puntosUnisabana.repository.ClienteRepository;
 import co.edu.unisabana.puntosUnisabana.repository.TransaccionRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClienteLogica {
@@ -27,12 +29,7 @@ public class ClienteLogica {
     }
 
     public ClienteModelo buscarCliente(int cedula){
-        for (ClienteModelo cliente : listaClientes()){
-            if (cliente.getCedula() == cedula){
-                return cliente;
-            }
-        }
-        return null;
+        return clienteRepository.findById(cedula).orElse(null);
     }
 
     public void guardarCliente(ClienteDTO clienteDTO){
@@ -67,6 +64,7 @@ public class ClienteLogica {
         TransaccionModelo transaccionModelo = new TransaccionModelo();
         transaccionModelo.setCliente(buscarCliente(cedulaCliente));
         transaccionModelo.setCantidadPuntos(beneficiosLogica.obtenerPuntosBeneficio(idBeneficio));
+        transaccionModelo.setFechaTransacción(LocalDate.now());
         transaccionRepository.save(transaccionModelo);
     }
 }

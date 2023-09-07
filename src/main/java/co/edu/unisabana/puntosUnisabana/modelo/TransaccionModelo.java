@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Data
@@ -20,6 +22,8 @@ public class TransaccionModelo {
 
     @Column
     private float cantidadPuntos;
+    @Column
+    private LocalDate fechaTransacción;
 
 
 }

@@ -7,7 +7,6 @@ import javax.persistence.Id;
 
 @Data
 public class BeneficioDTO {
-    private int id;
     private String nombreBeneficio;
     private int puntosRequeridos;
 }
