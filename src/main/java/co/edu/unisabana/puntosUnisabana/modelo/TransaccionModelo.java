@@ -19,7 +19,7 @@ public class TransaccionModelo {
     private ClienteModelo cliente;
 
     @Column
-    private float cantidadDinero;
+    private float cantidadPuntos;
 
 
 }
