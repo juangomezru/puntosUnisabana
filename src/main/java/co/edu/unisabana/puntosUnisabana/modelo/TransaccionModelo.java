@@ -2,10 +2,7 @@ package co.edu.unisabana.puntosUnisabana.modelo;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -14,6 +11,7 @@ import java.util.Date;
 public class TransaccionModelo {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private int id;
 

@@ -9,6 +9,7 @@ import javax.persistence.*;
 public class PuntosModelo {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private int id;
 
