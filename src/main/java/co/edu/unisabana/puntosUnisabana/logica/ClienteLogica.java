@@ -84,7 +84,7 @@ public class ClienteLogica {
         TransaccionModelo transaccionModelo = new TransaccionModelo();
         transaccionModelo.setCliente(buscarCliente(cedulaCliente));
         transaccionModelo.setCantidadPuntos(beneficiosLogica.obtenerPuntosBeneficio(idBeneficio));
-        transaccionModelo.setFechaTransacción(LocalDate.now());
+        transaccionModelo.setFechaTransaccion(LocalDate.now());
         transaccionRepository.save(transaccionModelo);
     }
 }
