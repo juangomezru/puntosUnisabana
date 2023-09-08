@@ -21,7 +21,8 @@ public class TransaccionModelo {
     @Column
     private float cantidadPuntos;
     @Column
-    private LocalDate fechaTransacción;
+    private LocalDate fechaTransaccion;
+
 
 
 }

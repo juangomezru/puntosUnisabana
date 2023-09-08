@@ -1,15 +1,15 @@
 package co.edu.unisabana.puntosUnisabana.logica;
 
 import co.edu.unisabana.puntosUnisabana.controllers.DTO.ClienteDTO;
-import co.edu.unisabana.puntosUnisabana.controllers.DTO.RespuestaDTO;
+import co.edu.unisabana.puntosUnisabana.modelo.BeneficioModelo;
 import co.edu.unisabana.puntosUnisabana.modelo.ClienteModelo;
 import co.edu.unisabana.puntosUnisabana.modelo.PuntosModelo;
 import co.edu.unisabana.puntosUnisabana.modelo.TransaccionModelo;
+import co.edu.unisabana.puntosUnisabana.repository.BeneficioRepository;
 import co.edu.unisabana.puntosUnisabana.repository.ClienteRepository;
 import co.edu.unisabana.puntosUnisabana.repository.PuntosRepository;
 import co.edu.unisabana.puntosUnisabana.repository.TransaccionRepository;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDate;
 import java.util.List;
 
@@ -20,12 +20,14 @@ public class ClienteLogica {
     private final PuntosLogica puntosLogica;
     private final PuntosRepository puntosRepository;
     private final BeneficiosLogica beneficiosLogica;
+    private final BeneficioRepository beneficioRepository;
     private final TransaccionRepository transaccionRepository;
-    public ClienteLogica(ClienteRepository clienteRepository, PuntosLogica puntosLogica, PuntosRepository puntosRepository, BeneficiosLogica beneficiosLogica, TransaccionRepository transaccionRepository) {
+    public ClienteLogica(ClienteRepository clienteRepository, PuntosLogica puntosLogica, PuntosRepository puntosRepository, BeneficiosLogica beneficiosLogica, BeneficioRepository beneficioRepository, TransaccionRepository transaccionRepository) {
         this.clienteRepository = clienteRepository;
         this.puntosLogica = puntosLogica;
         this.puntosRepository = puntosRepository;
         this.beneficiosLogica = beneficiosLogica;
+        this.beneficioRepository = beneficioRepository;
         this.transaccionRepository = transaccionRepository;
     }
     public List<ClienteModelo> listaClientes(){
@@ -51,6 +53,7 @@ public class ClienteLogica {
         transaccion(cedulaCliente, idBeneficio);
         if(verificarPuntos(cedulaCliente, idBeneficio)){
             descontarPuntos(cedulaCliente, idBeneficio);
+            guardarBeneficios(cedulaCliente, idBeneficio);
         }else
             throw new IllegalArgumentException("No tiene puntos para ese beneficio");
     }
@@ -67,8 +70,8 @@ public class ClienteLogica {
     }
     public void afiliarCliente(int cedulaCliente){
         PuntosModelo puntosModelo = new PuntosModelo();
-        if(clienteRepository.findById(cedulaCliente).isEmpty() || puntosLogica.buscarClienteEnPuntos(buscarCliente(cedulaCliente)).getCliente().equals(buscarCliente(cedulaCliente)))
-            throw new IllegalArgumentException("No se encuentra el cliente registrado o ye esta afiliado");
+        if(buscarCliente(cedulaCliente)==null || puntosLogica.buscarClienteEnPuntos(buscarCliente(cedulaCliente)).getCliente().getCedula()==(buscarCliente(cedulaCliente).getCedula()) )
+            throw new IllegalArgumentException("No se encuentra el cliente registrado o ya esta afiliado");
         else {
             puntosModelo.setCliente(buscarCliente(cedulaCliente));
             puntosModelo.setPuntos(0);
@@ -80,11 +83,22 @@ public class ClienteLogica {
         puntosLogica.actualizarPuntos(numeroPuntos,buscarCliente(cedulaCliente));
     }
 
+    public void guardarBeneficios(int cedulaCliente, int idBeneficio)
+    {
+        BeneficiosLogica beneficiosLogica1 = new BeneficiosLogica(beneficioRepository);
+        ClienteModelo cliente = buscarCliente(cedulaCliente);
+        BeneficioModelo beneficio= beneficiosLogica1.buscarBeneficio(idBeneficio);
+
+        cliente.getBeneficios().add(beneficio);
+
+        clienteRepository.save(cliente);
+    }
+
     public void transaccion(int cedulaCliente, int idBeneficio){
         TransaccionModelo transaccionModelo = new TransaccionModelo();
         transaccionModelo.setCliente(buscarCliente(cedulaCliente));
         transaccionModelo.setCantidadPuntos(beneficiosLogica.obtenerPuntosBeneficio(idBeneficio));
-        transaccionModelo.setFechaTransacción(LocalDate.now());
+        transaccionModelo.setFechaTransaccion(LocalDate.now());
         transaccionRepository.save(transaccionModelo);
     }
 }
