@@ -4,7 +4,6 @@ import co.edu.unisabana.puntosUnisabana.controllers.DTO.BeneficioDTO;
 import co.edu.unisabana.puntosUnisabana.controllers.DTO.RespuestaDTO;
 import co.edu.unisabana.puntosUnisabana.logica.BeneficiosLogica;
 import co.edu.unisabana.puntosUnisabana.modelo.BeneficioModelo;
-import co.edu.unisabana.puntosUnisabana.repository.BeneficioRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,7 +20,7 @@ public class BeneficioController {
     }
 
     @GetMapping(path = "/beneficios")
-    public List<BeneficioModelo> buscarBeneficios (){
+    public List<BeneficioModelo> buscarBeneficios() {
         return beneficioLogica.listaBeneficios();
     }
 
@@ -34,4 +33,5 @@ public class BeneficioController {
             return new RespuestaDTO("El beneficio no se pudo agregar " + e.getMessage());
         }
     }
+
 }

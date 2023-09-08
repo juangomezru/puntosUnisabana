@@ -7,18 +7,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @RestController
 public class TransaccionController {
 
     private TransaccionLogica transaccionLogica;
 
-    public TransaccionController(TransaccionLogica transaccionLogica) {this.transaccionLogica = transaccionLogica;}
+    public TransaccionController(TransaccionLogica transaccionLogica) {
+        this.transaccionLogica = transaccionLogica;
+    }
 
     @GetMapping(path = "/transacciones")
-    public List<TransaccionModelo> verTransacciones(){
+    public List<TransaccionModelo> verTransacciones() {
         try {
             return transaccionLogica.obtenerTransacciones();
         } catch (Exception e) {
@@ -26,13 +28,13 @@ public class TransaccionController {
         }
     }
 
-    @GetMapping(path = "/transacciones/clientes")
-    public List<TransaccionModelo> verTransaccionesPorCliente(@RequestParam int cedula){
-        try{
+    @GetMapping(path = "/transacciones/clientes/buscar")
+    public List<TransaccionModelo> verTransaccionesPorCliente(@RequestParam int cedula) {
+        try {
             return transaccionLogica.consultarTransaccion(cedula);
 
-        }
-        catch (Exception e){
+        } catch (NoSuchElementException e) {
+            new RespuestaDTO("No se obtuvieron las trasacciones: " + e);
             return null;
         }
 

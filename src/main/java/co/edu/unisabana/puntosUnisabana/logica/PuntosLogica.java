@@ -6,11 +6,11 @@ import co.edu.unisabana.puntosUnisabana.repository.PuntosRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 @Service
 public class PuntosLogica {
     private final PuntosRepository puntosRepository;
+
 
     public PuntosLogica(PuntosRepository puntosRepository) {
         this.puntosRepository = puntosRepository;
@@ -20,13 +20,14 @@ public class PuntosLogica {
     public List<PuntosModelo> listaPuntos() {
         return puntosRepository.findAll();
     }
-    public PuntosModelo buscarClienteEnPuntos(ClienteModelo cliente){
+
+    public boolean existeClienteEnPuntos(ClienteModelo cliente) {
         for (PuntosModelo clientePuntos : listaPuntos()) {
             if (clientePuntos.getCliente() == cliente) {
-                return clientePuntos;
+                return true;
             }
         }
-        throw new NoSuchElementException("No se encuentra afiliado el cliente");
+        return false;
     }
 
     public int buscarClientePuntos(ClienteModelo cliente) {
@@ -37,6 +38,7 @@ public class PuntosLogica {
         }
         return 0;
     }
+
     public void actualizarPuntos(int puntosFinales, ClienteModelo cliente) {
         for (PuntosModelo puntos : listaPuntos()) {
             if (puntos.getCliente() == cliente) {
@@ -46,3 +48,4 @@ public class PuntosLogica {
         }
     }
 }
+
