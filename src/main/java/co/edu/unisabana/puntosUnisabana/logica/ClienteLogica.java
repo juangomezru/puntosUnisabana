@@ -49,7 +49,6 @@ public class ClienteLogica {
     }
     public void redimirBeneficio(int cedulaCliente, int idBeneficio){
         transaccion(cedulaCliente, idBeneficio);
-
         if(verificarPuntos(cedulaCliente, idBeneficio)){
             descontarPuntos(cedulaCliente, idBeneficio);
         }else
@@ -77,8 +76,7 @@ public class ClienteLogica {
         }
     }
     public void acumularPuntos(int cedulaCliente, int valorCompra){
-        int numeroPuntos = Math.round(valorCompra / 1000);
-        //puntosLogica.buscarClienteEnPuntos(buscarCliente(cedulaCliente)).setPuntos(numeroPuntos);
+        int numeroPuntos = Math.round(valorCompra / 1000) + puntosLogica.buscarClientePuntos(buscarCliente(cedulaCliente));
         puntosLogica.actualizarPuntos(numeroPuntos,buscarCliente(cedulaCliente));
     }
 
