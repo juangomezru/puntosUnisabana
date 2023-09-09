@@ -52,8 +52,8 @@ public class ClienteLogica {
                         ClienteModelo.getBeneficios().stream()
                                 .map(beneficioModelo -> new BeneficioDTO(
                                         beneficioModelo.getNombreBeneficio(),
-                                        beneficioModelo.getId(),
-                                        beneficioModelo.getPuntosRequeridos()))
+                                        beneficioModelo.getPuntosRequeridos(),
+                                        beneficioModelo.getId()))
                                 .collect(Collectors.toList()))).collect(Collectors.toList());
     }
 
