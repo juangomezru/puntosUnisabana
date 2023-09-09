@@ -109,7 +109,8 @@ public class ClienteLogica {
     public void transaccion(int cedulaCliente, int idBeneficio) {
         TransaccionModelo transaccionModelo = new TransaccionModelo();
         transaccionModelo.setCliente(buscarCliente(cedulaCliente));
-        transaccionModelo.setCantidadPuntos(beneficiosLogica.obtenerPuntosBeneficio(idBeneficio));
+        transaccionModelo.setNombreBeneficio(beneficiosLogica.buscarBeneficio(idBeneficio).getNombreBeneficio());
+        transaccionModelo.setCantidadPuntosGastados(beneficiosLogica.obtenerPuntosBeneficio(idBeneficio));
         transaccionModelo.setFechaTransaccion(LocalDate.now());
         transaccionRepository.save(transaccionModelo);
     }

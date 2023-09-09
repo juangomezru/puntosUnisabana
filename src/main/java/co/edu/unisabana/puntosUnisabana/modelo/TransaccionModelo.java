@@ -13,14 +13,17 @@ public class TransaccionModelo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private int id;
+    @Column
+    private String nombreBeneficio;
 
     @ManyToOne
     private ClienteModelo cliente;
 
     @Column
-    private float cantidadPuntos;
+    private float cantidadPuntosGastados;
     @Column
     private LocalDate fechaTransaccion;
+
 
 
 }

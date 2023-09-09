@@ -1,15 +1,21 @@
 package co.edu.unisabana.puntosUnisabana.controllers.DTO;
 
 import co.edu.unisabana.puntosUnisabana.modelo.ClienteModelo;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class TransaccionDTO {
-
-    private ClienteModelo cliente;
-    private float cantidadPuntos;
+    private int idTransaccion;
+    private int cedula;
+    private String nombreBeneficio;
+    private float cantidadPuntosGastados;
     private LocalDate fechaTransaccion;
+
 }

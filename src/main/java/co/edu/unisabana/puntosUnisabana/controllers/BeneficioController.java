@@ -1,14 +1,12 @@
 package co.edu.unisabana.puntosUnisabana.controllers;
 
 import co.edu.unisabana.puntosUnisabana.controllers.DTO.BeneficioDTO;
+import co.edu.unisabana.puntosUnisabana.controllers.DTO.ClienteDTO;
 import co.edu.unisabana.puntosUnisabana.controllers.DTO.RespuestaDTO;
 import co.edu.unisabana.puntosUnisabana.logica.BeneficiosLogica;
 import co.edu.unisabana.puntosUnisabana.modelo.BeneficioModelo;
 import co.edu.unisabana.puntosUnisabana.modelo.TransaccionModelo;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 import java.util.List;

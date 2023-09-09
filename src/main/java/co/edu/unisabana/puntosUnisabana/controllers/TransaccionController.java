@@ -1,6 +1,7 @@
 package co.edu.unisabana.puntosUnisabana.controllers;
 
 import co.edu.unisabana.puntosUnisabana.controllers.DTO.RespuestaDTO;
+import co.edu.unisabana.puntosUnisabana.controllers.DTO.TransaccionDTO;
 import co.edu.unisabana.puntosUnisabana.logica.TransaccionLogica;
 import co.edu.unisabana.puntosUnisabana.modelo.TransaccionModelo;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,18 +21,18 @@ public class TransaccionController {
     }
 
     @GetMapping(path = "/transacciones")
-    public List<TransaccionModelo> verTransacciones() {
+    public List<TransaccionDTO> verTransacciones() {
         try {
-            return transaccionLogica.obtenerTransacciones();
+            return transaccionLogica.obtenerTransaccionesDTO();
         } catch (Exception e) {
             return null;
         }
     }
 
     @GetMapping(path = "/transacciones/clientes/buscar")
-    public RespuestaDTO<List<TransaccionModelo>> verTransaccionesPorCliente(@RequestParam int cedula) {
+    public RespuestaDTO<List<TransaccionDTO>> verTransaccionesPorCliente(@RequestParam int cedula) {
         try {
-            List<TransaccionModelo> transacciones = transaccionLogica.consultarTransaccion(cedula);
+            List<TransaccionDTO> transacciones = transaccionLogica.consultarTransaccion(cedula);
             return new RespuestaDTO<>("Transacciones encontradas", transacciones);
 
         } catch (NoSuchElementException e) {

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -19,32 +20,31 @@ public class TransaccionLogica {
         this.transaccionRepository = transaccionRepository;
     }
 
-    public void guardarTransaccion(TransaccionDTO transaccionDTO) {
-
-        TransaccionModelo transaccion = new TransaccionModelo();
-        transaccion.setCliente(transaccionDTO.getCliente());
-        transaccion.setCantidadPuntos(transaccionDTO.getCantidadPuntos());
-        transaccion.setFechaTransaccion(transaccionDTO.getFechaTransaccion());
-
-    }
-
     public List<TransaccionModelo> obtenerTransacciones() {
         return transaccionRepository.findAll();
     }
 
-    public List<TransaccionModelo> consultarTransaccion(int cedula){
+
+    public List<TransaccionDTO> obtenerTransaccionesDTO() {
+        return transaccionRepository.findAll().stream().map(TransaccionModelo ->
+                new TransaccionDTO(TransaccionModelo.getId(),TransaccionModelo.getCliente().getCedula(),TransaccionModelo.getNombreBeneficio(), TransaccionModelo.getCantidadPuntosGastados(), TransaccionModelo.getFechaTransaccion())).collect(Collectors.toList());
+    }
+
+    public List<TransaccionDTO> consultarTransaccion(int cedula) {
         boolean editad = false;
         List<TransaccionModelo> transaccionModelos = new ArrayList<>();
 
-        for (TransaccionModelo transacciones: obtenerTransacciones()){
-            if (transacciones.getCliente().getCedula()==cedula){
+        for (TransaccionModelo transacciones : obtenerTransacciones()) {
+            if (transacciones.getCliente().getCedula() == cedula) {
                 transaccionModelos.add(transacciones);
                 editad = true;
             }
-            }if(!editad){
+        }
+        if (!editad) {
             throw new NoSuchElementException("No existen transacciones para este usuario");
         }
-        return transaccionModelos;
+        return transaccionModelos.stream().map(TransaccionModelo ->
+                new TransaccionDTO(TransaccionModelo.getId(),TransaccionModelo.getCliente().getCedula(),TransaccionModelo.getNombreBeneficio(), TransaccionModelo.getCantidadPuntosGastados(), TransaccionModelo.getFechaTransaccion())).collect(Collectors.toList());
     }
 
 }
