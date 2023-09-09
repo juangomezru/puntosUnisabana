@@ -113,13 +113,13 @@
 
 ### Componentes
 
-![Componentes](\diagramas\ArquitecturaFidelizaciónAPI-Component%20Diagram.drawio.png)
+![Componentes](\diagramas\Componentes.png)
 
 ### Paquetes
-![Paquetes](\diagramas\ArquitecturaFidelizaciónAPI-Diagrama Paquetes.drawio.png)
+![Paquetes](\diagramas\Paquetes.png)
 
 ### ERD
-![ERD](\diagramas\ArquitecturaFidelizaciónAPI-ERM.drawio.png)
+![ERD](\diagramas\ERM.png)
 
 
 
