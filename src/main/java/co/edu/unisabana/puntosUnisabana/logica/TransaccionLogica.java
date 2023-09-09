@@ -27,7 +27,7 @@ public class TransaccionLogica {
 
     public List<TransaccionDTO> obtenerTransaccionesDTO() {
         return transaccionRepository.findAll().stream().map(TransaccionModelo ->
-                new TransaccionDTO(TransaccionModelo.getId(),TransaccionModelo.getCliente().getCedula(),TransaccionModelo.getNombreBeneficio(), TransaccionModelo.getCantidadPuntosGastados(), TransaccionModelo.getFechaTransaccion())).collect(Collectors.toList());
+                new TransaccionDTO(TransaccionModelo.getId(), TransaccionModelo.getCliente().getCedula(), TransaccionModelo.getNombreBeneficio(), TransaccionModelo.getCantidadPuntosGastados(), TransaccionModelo.getFechaTransaccion())).collect(Collectors.toList());
     }
 
     public List<TransaccionDTO> consultarTransaccion(int cedula) {
@@ -44,7 +44,7 @@ public class TransaccionLogica {
             throw new NoSuchElementException("No existen transacciones para este usuario");
         }
         return transaccionModelos.stream().map(TransaccionModelo ->
-                new TransaccionDTO(TransaccionModelo.getId(),TransaccionModelo.getCliente().getCedula(),TransaccionModelo.getNombreBeneficio(), TransaccionModelo.getCantidadPuntosGastados(), TransaccionModelo.getFechaTransaccion())).collect(Collectors.toList());
+                new TransaccionDTO(TransaccionModelo.getId(), TransaccionModelo.getCliente().getCedula(), TransaccionModelo.getNombreBeneficio(), TransaccionModelo.getCantidadPuntosGastados(), TransaccionModelo.getFechaTransaccion())).collect(Collectors.toList());
     }
 
 }

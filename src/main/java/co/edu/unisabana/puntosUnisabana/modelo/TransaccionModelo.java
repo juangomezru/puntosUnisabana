@@ -25,5 +25,4 @@ public class TransaccionModelo {
     private LocalDate fechaTransaccion;
 
 
-
 }

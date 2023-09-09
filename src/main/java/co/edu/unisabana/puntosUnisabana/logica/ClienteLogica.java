@@ -2,13 +2,13 @@ package co.edu.unisabana.puntosUnisabana.logica;
 
 import co.edu.unisabana.puntosUnisabana.controllers.DTO.BeneficioDTO;
 import co.edu.unisabana.puntosUnisabana.controllers.DTO.ClienteDTO;
+import co.edu.unisabana.puntosUnisabana.gestion.IGestionClienteTransaccion;
 import co.edu.unisabana.puntosUnisabana.modelo.BeneficioModelo;
 import co.edu.unisabana.puntosUnisabana.modelo.ClienteModelo;
 import co.edu.unisabana.puntosUnisabana.modelo.PuntosModelo;
 import co.edu.unisabana.puntosUnisabana.repository.BeneficioRepository;
 import co.edu.unisabana.puntosUnisabana.repository.ClienteRepository;
 import co.edu.unisabana.puntosUnisabana.repository.PuntosRepository;
-import co.edu.unisabana.puntosUnisabana.gestion.IGestionClienteTransaccion;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,19 +28,15 @@ public class ClienteLogica {
     private final IGestionClienteTransaccion gestionClienteTransaccion;
 
 
-
     public ClienteLogica(ClienteRepository clienteRepository, PuntosLogica puntosLogica, PuntosRepository puntosRepository, BeneficiosLogica beneficiosLogica, BeneficioRepository beneficioRepository, IGestionClienteTransaccion gestionClienteTransaccion) {
         this.clienteRepository = clienteRepository;
         this.puntosLogica = puntosLogica;
         this.puntosRepository = puntosRepository;
         this.beneficiosLogica = beneficiosLogica;
         this.beneficioRepository = beneficioRepository;
-        this.gestionClienteTransaccion= gestionClienteTransaccion;
+        this.gestionClienteTransaccion = gestionClienteTransaccion;
     }
 
-    public List<ClienteModelo> listaClientes() {
-        return clienteRepository.findAll();
-    }
 
     public ClienteModelo buscarCliente(int cedula) {
         return clienteRepository.findById(cedula).orElse(null);
@@ -75,7 +71,6 @@ public class ClienteLogica {
                 descontarPuntos(cedulaCliente, idBeneficio);
                 guardarBeneficios(cedulaCliente, idBeneficio);
                 gestionClienteTransaccion.transaccion(buscarCliente(cedulaCliente), beneficiosLogica.buscarBeneficio(idBeneficio));
-               /* transaccion(cedulaCliente, idBeneficio);*/
             } else throw new IllegalArgumentException("No tiene puntos para ese beneficio");
         } else {
             throw new NoSuchElementException("El cliente no esta registrado en puntos o no existe el beneficio");
@@ -84,9 +79,7 @@ public class ClienteLogica {
     }
 
     private boolean verificarPuntos(int cedulaCliente, int idBeneficio) {
-        if (puntosLogica.buscarClientePuntos(buscarCliente(cedulaCliente)) >= beneficiosLogica.obtenerPuntosBeneficio(idBeneficio))
-            return true;
-        else return false;
+        return puntosLogica.buscarClientePuntos(buscarCliente(cedulaCliente)) >= beneficiosLogica.obtenerPuntosBeneficio(idBeneficio);
     }
 
     public void descontarPuntos(int cedulaCliente, int idBeneficio) {
@@ -121,7 +114,6 @@ public class ClienteLogica {
 
         clienteRepository.save(cliente);
     }
-
 
 
     public void existeClienteEnPuntos(int cedula) {
