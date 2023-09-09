@@ -1,5 +1,6 @@
 package co.edu.unisabana.puntosUnisabana.logica;
 
+import co.edu.unisabana.puntosUnisabana.controllers.DTO.BeneficioDTO;
 import co.edu.unisabana.puntosUnisabana.controllers.DTO.ClienteDTO;
 import co.edu.unisabana.puntosUnisabana.modelo.BeneficioModelo;
 import co.edu.unisabana.puntosUnisabana.modelo.ClienteModelo;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 @Service
 public class ClienteLogica {
@@ -40,6 +42,17 @@ public class ClienteLogica {
 
     public ClienteModelo buscarCliente(int cedula) {
         return clienteRepository.findById(cedula).orElse(null);
+    }
+
+    public List<ClienteDTO> buscarClienteDTO(int cedula) {
+        return clienteRepository.findById(cedula).stream().map(ClienteModelo ->
+                new ClienteDTO(ClienteModelo.getCedula(), ClienteModelo.getNombre(), ClienteModelo.getEmail(),
+                        ClienteModelo.getBeneficios().stream()
+                                .map(beneficioModelo -> new BeneficioDTO(
+                                        beneficioModelo.getNombreBeneficio(),
+                                        beneficioModelo.getId(),
+                                        beneficioModelo.getPuntosRequeridos()))
+                                .collect(Collectors.toList()))).collect(Collectors.toList());
     }
 
     public void guardarCliente(ClienteDTO clienteDTO) {
@@ -88,7 +101,7 @@ public class ClienteLogica {
 
     public void acumularPuntos(int cedulaCliente, int valorCompra) {
         final int ratioPuntos = 1000;
-        if (puntosLogica.existeClienteEnPuntos(buscarCliente(cedulaCliente))){
+        if (puntosLogica.existeClienteEnPuntos(buscarCliente(cedulaCliente))) {
             int numeroPuntos = Math.round((float) valorCompra / ratioPuntos) + puntosLogica.buscarClientePuntos(buscarCliente(cedulaCliente));
             puntosLogica.actualizarPuntos(numeroPuntos, buscarCliente(cedulaCliente));
         } else {

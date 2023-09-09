@@ -3,9 +3,10 @@ package co.edu.unisabana.puntosUnisabana.controllers;
 import co.edu.unisabana.puntosUnisabana.controllers.DTO.ClienteDTO;
 import co.edu.unisabana.puntosUnisabana.controllers.DTO.RespuestaDTO;
 import co.edu.unisabana.puntosUnisabana.logica.ClienteLogica;
+import co.edu.unisabana.puntosUnisabana.modelo.ClienteModelo;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collection;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
@@ -57,6 +58,15 @@ public class ClienteController {
             return new RespuestaDTO<>("Compra realizada exitosamente");
         } catch (IllegalArgumentException e) {
             return new RespuestaDTO<>("Compra no realizada: " + e.getMessage());
+        }
+    }
+
+    @GetMapping(path = "/cliente/{cedula}")
+    public RespuestaDTO<List<ClienteDTO>> buscarCliente (@PathVariable int cedula){
+        try {
+            return new RespuestaDTO<>("Se encontro a cliente", clienteLogica.buscarClienteDTO(cedula));
+        } catch (Exception e){
+            return new RespuestaDTO<>("No se encontro un cliente");
         }
     }
 }
