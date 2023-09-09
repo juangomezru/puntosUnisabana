@@ -29,15 +29,14 @@ public class TransaccionController {
     }
 
     @GetMapping(path = "/transacciones/clientes/buscar")
-    public List<TransaccionModelo> verTransaccionesPorCliente(@RequestParam int cedula) {
+    public RespuestaDTO<List<TransaccionModelo>> verTransaccionesPorCliente(@RequestParam int cedula) {
         try {
-            return transaccionLogica.consultarTransaccion(cedula);
+            List<TransaccionModelo> transacciones = transaccionLogica.consultarTransaccion(cedula);
+            return new RespuestaDTO<>("Transacciones encontradas", transacciones);
 
         } catch (NoSuchElementException e) {
-            new RespuestaDTO("No se obtuvieron las trasacciones: " + e);
-            return null;
+            return new RespuestaDTO<>("No se obtuvieron las trasacciones: " + e.getMessage());
         }
-
     }
 
 }

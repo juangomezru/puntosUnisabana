@@ -6,6 +6,7 @@ import co.edu.unisabana.puntosUnisabana.repository.BeneficioRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class BeneficiosLogica {
@@ -15,8 +16,9 @@ public class BeneficiosLogica {
         this.beneficioRepository = beneficioRepository;
     }
 
-    public List<BeneficioModelo> listaBeneficios() {
-        return beneficioRepository.findAll();
+    public List<BeneficioDTO> listaBeneficios() {
+        return beneficioRepository.findAll().stream().map(beneficioModelo ->
+                new BeneficioDTO(beneficioModelo.getNombreBeneficio(), beneficioModelo.getPuntosRequeridos(), beneficioModelo.getId())).collect(Collectors.toList());
     }
 
     public BeneficioModelo buscarBeneficio(int id) {

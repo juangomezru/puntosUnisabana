@@ -5,6 +5,7 @@ import co.edu.unisabana.puntosUnisabana.controllers.DTO.RespuestaDTO;
 import co.edu.unisabana.puntosUnisabana.logica.ClienteLogica;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.NoSuchElementException;
 
 @RestController
@@ -17,45 +18,45 @@ public class ClienteController {
     }
 
     @PostMapping(path = "/cliente/agregar")
-    public RespuestaDTO guardarCliente(@RequestBody ClienteDTO clienteDTO) {
+    public RespuestaDTO<String> guardarCliente(@RequestBody ClienteDTO clienteDTO) {
         try {
             clienteLogica.guardarCliente(clienteDTO);
-            return new RespuestaDTO("Cliente agregado correctamente");
+            return new RespuestaDTO<>("Cliente agregado correctamente");
         } catch (IllegalArgumentException e) {
-            return new RespuestaDTO("El cliente no se pudo agregar " + e.getMessage());
+            return new RespuestaDTO<>("El cliente no se pudo agregar " + e.getMessage());
         }
 
     }
 
     @PutMapping(path = "/cliente/redimir")
-    public RespuestaDTO redimirBeneficio(@RequestParam int cedulaCliente, @RequestParam int idBeneficio) {
+    public RespuestaDTO<String> redimirBeneficio(@RequestParam int cedulaCliente, @RequestParam int idBeneficio) {
         try {
             clienteLogica.redimirBeneficio(cedulaCliente, idBeneficio);
-            return new RespuestaDTO("Beneficio se pudo redimir");
+            return new RespuestaDTO<>("Beneficio se pudo redimir");
         } catch (IllegalArgumentException | NoSuchElementException e) {
-            return new RespuestaDTO("El beneficio no se pudo redimir: " + e.getMessage());
+            return new RespuestaDTO<>("El beneficio no se pudo redimir: " + e.getMessage());
         }
     }
 
     @PostMapping(path = "/cliente/afiliacion/{cedula}")
-    public RespuestaDTO afiliarCliente(@PathVariable int cedula) {
+    public RespuestaDTO<String> afiliarCliente(@PathVariable int cedula) {
 
         try {
             clienteLogica.existeClienteEnPuntos(cedula);
-            return new RespuestaDTO("El cliente se afilio correctamente");
+            return new RespuestaDTO<>("El cliente se afilio correctamente");
 
         } catch (IllegalArgumentException | NoSuchElementException e) {
-            return new RespuestaDTO("El cliente no se pudo afiliar: " + e.getMessage());
+            return new RespuestaDTO<>("El cliente no se pudo afiliar: " + e.getMessage());
         }
     }
 
     @PutMapping(path = "/cliente/compra/puntos")
-    public RespuestaDTO clientPuntosCompra(@RequestParam int cedulaCliente, @RequestParam int valorCompra) {
+    public RespuestaDTO<String> clientPuntosCompra(@RequestParam int cedulaCliente, @RequestParam int valorCompra) {
         try {
             clienteLogica.acumularPuntos(cedulaCliente, valorCompra);
-            return new RespuestaDTO("Compra realizada exitosamente");
+            return new RespuestaDTO<>("Compra realizada exitosamente");
         } catch (IllegalArgumentException e) {
-            return new RespuestaDTO("Compra no realizada: " + e.getMessage());
+            return new RespuestaDTO<>("Compra no realizada: " + e.getMessage());
         }
     }
 }

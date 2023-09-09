@@ -32,15 +32,17 @@ public class TransaccionLogica {
         return transaccionRepository.findAll();
     }
 
-    public List<TransaccionModelo> consultarTransaccion(int cedula) {
-
+    public List<TransaccionModelo> consultarTransaccion(int cedula){
+        boolean editad = false;
         List<TransaccionModelo> transaccionModelos = new ArrayList<>();
-        for (TransaccionModelo transacciones : obtenerTransacciones()) {
-            if (transacciones.getCliente().getCedula() == cedula) {
+
+        for (TransaccionModelo transacciones: obtenerTransacciones()){
+            if (transacciones.getCliente().getCedula()==cedula){
                 transaccionModelos.add(transacciones);
-            } else if (transaccionModelos.isEmpty()){
-                throw new NoSuchElementException("No existen transacciones para este cliente");
+                editad = true;
             }
+            }if(!editad){
+            throw new NoSuchElementException("No existen transacciones para este usuario");
         }
         return transaccionModelos;
     }
