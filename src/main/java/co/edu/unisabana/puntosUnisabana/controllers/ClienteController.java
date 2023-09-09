@@ -3,7 +3,6 @@ package co.edu.unisabana.puntosUnisabana.controllers;
 import co.edu.unisabana.puntosUnisabana.controllers.DTO.ClienteDTO;
 import co.edu.unisabana.puntosUnisabana.controllers.DTO.RespuestaDTO;
 import co.edu.unisabana.puntosUnisabana.logica.ClienteLogica;
-import co.edu.unisabana.puntosUnisabana.modelo.ClienteModelo;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
