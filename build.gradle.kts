@@ -26,11 +26,10 @@ dependencies {
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	// https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa
 	implementation("org.springframework.data:spring-data-jpa:2.7.15")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
 	implementation("mysql:mysql-connector-java:8.0.30")
+	implementation("com.h2database:h2:2.2.220")
 
 }
 
