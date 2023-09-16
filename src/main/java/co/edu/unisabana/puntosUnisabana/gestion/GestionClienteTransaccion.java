@@ -11,9 +11,7 @@ import java.time.LocalDate;
 
 
 @Component
-public class GestionClienteTransaccion implements IGestionClienteTransaccion
-{
-
+public class GestionClienteTransaccion implements IGestionClienteTransaccion {
 
     private final TransaccionRepository transaccionRepository;
 
