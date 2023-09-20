@@ -1,8 +1,8 @@
-package co.edu.unisabana.puntosUnisabana.gestion;
+package co.edu.unisabana.puntosUnisabana.service;
 
-import co.edu.unisabana.puntosUnisabana.modelo.BeneficioModelo;
-import co.edu.unisabana.puntosUnisabana.modelo.ClienteModelo;
-import co.edu.unisabana.puntosUnisabana.modelo.TransaccionModelo;
+import co.edu.unisabana.puntosUnisabana.model.BeneficioModelo;
+import co.edu.unisabana.puntosUnisabana.model.ClienteModelo;
+import co.edu.unisabana.puntosUnisabana.model.TransaccionModelo;
 import co.edu.unisabana.puntosUnisabana.repository.TransaccionRepository;
 import org.springframework.stereotype.Component;
 
