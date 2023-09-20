@@ -1,7 +1,7 @@
-package co.edu.unisabana.puntosUnisabana.logica;
+package co.edu.unisabana.puntosUnisabana.logic;
 
-import co.edu.unisabana.puntosUnisabana.controllers.DTO.BeneficioDTO;
-import co.edu.unisabana.puntosUnisabana.modelo.BeneficioModelo;
+import co.edu.unisabana.puntosUnisabana.controller.DTO.BeneficioDTO;
+import co.edu.unisabana.puntosUnisabana.model.BeneficioModelo;
 import co.edu.unisabana.puntosUnisabana.repository.BeneficioRepository;
 import org.springframework.stereotype.Service;
 

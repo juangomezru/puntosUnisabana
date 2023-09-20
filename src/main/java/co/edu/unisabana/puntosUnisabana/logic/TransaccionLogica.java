@@ -1,7 +1,7 @@
-package co.edu.unisabana.puntosUnisabana.logica;
+package co.edu.unisabana.puntosUnisabana.logic;
 
-import co.edu.unisabana.puntosUnisabana.controllers.DTO.TransaccionDTO;
-import co.edu.unisabana.puntosUnisabana.modelo.TransaccionModelo;
+import co.edu.unisabana.puntosUnisabana.controller.DTO.TransaccionDTO;
+import co.edu.unisabana.puntosUnisabana.model.TransaccionModelo;
 import co.edu.unisabana.puntosUnisabana.repository.TransaccionRepository;
 import org.springframework.stereotype.Service;
 

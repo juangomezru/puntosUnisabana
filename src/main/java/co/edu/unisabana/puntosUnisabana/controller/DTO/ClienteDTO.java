@@ -1,4 +1,4 @@
-package co.edu.unisabana.puntosUnisabana.controllers.DTO;
+package co.edu.unisabana.puntosUnisabana.controller.DTO;
 
 
 import lombok.AllArgsConstructor;

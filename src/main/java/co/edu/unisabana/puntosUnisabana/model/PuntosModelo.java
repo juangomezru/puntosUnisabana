@@ -1,4 +1,4 @@
-package co.edu.unisabana.puntosUnisabana.modelo;
+package co.edu.unisabana.puntosUnisabana.model;
 
 import lombok.Data;
 

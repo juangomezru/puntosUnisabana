@@ -1,4 +1,4 @@
-package co.edu.unisabana.puntosUnisabana.modelo;
+package co.edu.unisabana.puntosUnisabana.model;
 
 import lombok.Data;
 
@@ -7,21 +7,18 @@ import java.util.List;
 
 @Entity
 @Data
-public class BeneficioModelo {
-
+public class ClienteModelo {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    private int id;
-
+    private int cedula;
     @Column
-    private String nombreBeneficio;
-
+    private String nombre;
     @Column
-    private int puntosRequeridos;
+    private String email;
 
     @ManyToMany
     @JoinTable(name = "cliente_beneficio", joinColumns = @JoinColumn(name = "cliente_id"), inverseJoinColumns = @JoinColumn(name = "beneficio_id"))
-    private List<ClienteModelo> cliente;
+    private List<BeneficioModelo> beneficios;
+
 
 }

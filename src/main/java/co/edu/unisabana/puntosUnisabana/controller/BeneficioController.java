@@ -1,7 +1,7 @@
-package co.edu.unisabana.puntosUnisabana.controllers;
-import co.edu.unisabana.puntosUnisabana.controllers.DTO.BeneficioDTO;
-import co.edu.unisabana.puntosUnisabana.controllers.DTO.RespuestaDTO;
-import co.edu.unisabana.puntosUnisabana.logica.BeneficiosLogica;
+package co.edu.unisabana.puntosUnisabana.controller;
+import co.edu.unisabana.puntosUnisabana.controller.DTO.BeneficioDTO;
+import co.edu.unisabana.puntosUnisabana.controller.DTO.RespuestaDTO;
+import co.edu.unisabana.puntosUnisabana.logic.BeneficiosLogica;
 import org.springframework.web.bind.annotation.*;
 
 

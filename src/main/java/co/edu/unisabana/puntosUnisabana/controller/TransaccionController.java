@@ -1,8 +1,8 @@
-package co.edu.unisabana.puntosUnisabana.controllers;
+package co.edu.unisabana.puntosUnisabana.controller;
 
-import co.edu.unisabana.puntosUnisabana.controllers.DTO.RespuestaDTO;
-import co.edu.unisabana.puntosUnisabana.controllers.DTO.TransaccionDTO;
-import co.edu.unisabana.puntosUnisabana.logica.TransaccionLogica;
+import co.edu.unisabana.puntosUnisabana.controller.DTO.RespuestaDTO;
+import co.edu.unisabana.puntosUnisabana.controller.DTO.TransaccionDTO;
+import co.edu.unisabana.puntosUnisabana.logic.TransaccionLogica;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

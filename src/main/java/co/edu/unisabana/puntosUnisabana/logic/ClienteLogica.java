@@ -1,11 +1,11 @@
-package co.edu.unisabana.puntosUnisabana.logica;
+package co.edu.unisabana.puntosUnisabana.logic;
 
-import co.edu.unisabana.puntosUnisabana.controllers.DTO.BeneficioDTO;
-import co.edu.unisabana.puntosUnisabana.controllers.DTO.ClienteDTO;
-import co.edu.unisabana.puntosUnisabana.gestion.IGestionClienteTransaccion;
-import co.edu.unisabana.puntosUnisabana.modelo.BeneficioModelo;
-import co.edu.unisabana.puntosUnisabana.modelo.ClienteModelo;
-import co.edu.unisabana.puntosUnisabana.modelo.PuntosModelo;
+import co.edu.unisabana.puntosUnisabana.controller.DTO.BeneficioDTO;
+import co.edu.unisabana.puntosUnisabana.controller.DTO.ClienteDTO;
+import co.edu.unisabana.puntosUnisabana.service.IGestionClienteTransaccion;
+import co.edu.unisabana.puntosUnisabana.model.BeneficioModelo;
+import co.edu.unisabana.puntosUnisabana.model.ClienteModelo;
+import co.edu.unisabana.puntosUnisabana.model.PuntosModelo;
 import co.edu.unisabana.puntosUnisabana.repository.BeneficioRepository;
 import co.edu.unisabana.puntosUnisabana.repository.ClienteRepository;
 import co.edu.unisabana.puntosUnisabana.repository.PuntosRepository;

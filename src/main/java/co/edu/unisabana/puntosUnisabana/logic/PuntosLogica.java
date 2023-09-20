@@ -1,7 +1,7 @@
-package co.edu.unisabana.puntosUnisabana.logica;
+package co.edu.unisabana.puntosUnisabana.logic;
 
-import co.edu.unisabana.puntosUnisabana.modelo.ClienteModelo;
-import co.edu.unisabana.puntosUnisabana.modelo.PuntosModelo;
+import co.edu.unisabana.puntosUnisabana.model.ClienteModelo;
+import co.edu.unisabana.puntosUnisabana.model.PuntosModelo;
 import co.edu.unisabana.puntosUnisabana.repository.PuntosRepository;
 import org.springframework.stereotype.Service;
 
