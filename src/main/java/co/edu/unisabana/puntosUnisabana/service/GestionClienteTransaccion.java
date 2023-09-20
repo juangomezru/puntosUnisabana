@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDate;
 
 
-
 @Component
 public class GestionClienteTransaccion implements IGestionClienteTransaccion {
+
 
     private final TransaccionRepository transaccionRepository;
 
@@ -21,8 +21,8 @@ public class GestionClienteTransaccion implements IGestionClienteTransaccion {
     }
 
     @Override
-    public void transaccion(ClienteModelo cliente, BeneficioModelo beneficio)
-    {
+    public void transaccion(ClienteModelo cliente, BeneficioModelo beneficio) {
+
         TransaccionModelo transaccionModelo = new TransaccionModelo();
         transaccionModelo.setCliente(cliente);
         transaccionModelo.setNombreBeneficio(beneficio.getNombreBeneficio());
