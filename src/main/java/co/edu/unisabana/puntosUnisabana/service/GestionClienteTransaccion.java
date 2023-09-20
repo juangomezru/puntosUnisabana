@@ -1,17 +1,17 @@
-package co.edu.unisabana.puntosUnisabana.service;
+package co.edu.unisabana.puntosUnisabana.gestion;
 
-import co.edu.unisabana.puntosUnisabana.model.BeneficioModelo;
-import co.edu.unisabana.puntosUnisabana.model.ClienteModelo;
-import co.edu.unisabana.puntosUnisabana.model.TransaccionModelo;
+import co.edu.unisabana.puntosUnisabana.modelo.BeneficioModelo;
+import co.edu.unisabana.puntosUnisabana.modelo.ClienteModelo;
+import co.edu.unisabana.puntosUnisabana.modelo.TransaccionModelo;
 import co.edu.unisabana.puntosUnisabana.repository.TransaccionRepository;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
 
-
 @Component
 public class GestionClienteTransaccion implements IGestionClienteTransaccion {
+
 
     private final TransaccionRepository transaccionRepository;
 
@@ -21,8 +21,8 @@ public class GestionClienteTransaccion implements IGestionClienteTransaccion {
     }
 
     @Override
-    public void transaccion(ClienteModelo cliente, BeneficioModelo beneficio)
-    {
+    public void transaccion(ClienteModelo cliente, BeneficioModelo beneficio) {
+
         TransaccionModelo transaccionModelo = new TransaccionModelo();
         transaccionModelo.setCliente(cliente);
         transaccionModelo.setNombreBeneficio(beneficio.getNombreBeneficio());

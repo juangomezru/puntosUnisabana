@@ -12,6 +12,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TransaccionDTO {
+
     private int idTransaccion;
     private int cedula;
     private String nombreBeneficio;
