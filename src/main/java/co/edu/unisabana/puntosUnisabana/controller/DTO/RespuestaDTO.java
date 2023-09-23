@@ -6,7 +6,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-
 public class RespuestaDTO<T> {
     private String mensaje;
     private T data;
