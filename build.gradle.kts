@@ -31,6 +31,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("mysql:mysql-connector-java:8.0.30")
 	implementation("com.h2database:h2:2.2.220")
+	implementation("org.springdoc:springdoc-openapi-ui:1.6.9")
 
 }
 

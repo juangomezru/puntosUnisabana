@@ -3,6 +3,7 @@ package co.edu.unisabana.puntosUnisabana.controller;
 import co.edu.unisabana.puntosUnisabana.controller.DTO.BeneficioDTO;
 import co.edu.unisabana.puntosUnisabana.controller.DTO.RespuestaDTO;
 import co.edu.unisabana.puntosUnisabana.logic.BeneficiosLogica;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@Tag(name = "Beneficio")
 public class BeneficioController {
     private BeneficiosLogica beneficioLogica;
 
