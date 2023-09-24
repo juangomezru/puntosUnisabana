@@ -22,8 +22,11 @@ jobs:
         with:
              arguments: build
 
+      - name: Run Tests
+        run: ./gradlew test
+
       - name: Run Coverage
-        run: ./gradlew testCoverage
+        run: ./gradlew jacocoTestReport
 
       - name: Upload Report
         uses: 'actions/upload-artifact@v2'
