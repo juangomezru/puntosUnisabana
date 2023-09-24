@@ -21,13 +21,14 @@ jobs:
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
              arguments: build
-      - name: Run Tests
+
+      - name: Correr pruebas
         run: ./gradlew test
 
-      - name: Run Test Coverage
+      - name: Correr prueba Coverage
         run: ./gradlew jacocoTestReport
 
-      - name: Generate JaCoCo Badge
+      - name: Generar JaCoCo badge
         uses: cicirello/jacoco-badge-generator@v2
         with:
           generate-branches-badge: true
