@@ -22,13 +22,13 @@ jobs:
         with:
              arguments: build
 
-      - name: Run Tests
+      - name: Correr tests
         run: ./gradlew test
 
-      - name: Run Test Coverage
+      - name: Correr coverage
         run: ./gradlew jacocoTestReport
 
-      - name: Generate JaCoCo Badge
+      - name: generar jacoco badge
         uses: cicirello/jacoco-badge-generator@v2
         with:
           generate-branches-badge: true
