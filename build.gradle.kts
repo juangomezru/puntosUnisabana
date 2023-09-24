@@ -63,5 +63,11 @@ tasks.withType<JacocoReport> {
 pitest {
 	junit5PluginVersion = "1.0.0"
 }
-
-
+pitest {
+	excludedClasses = listOf(
+			"**.controller.DTO**",
+			"**.model.**",
+			"**.service.**",
+			"**.PuntosUnisabanaApplication.class**"
+	)
+}
