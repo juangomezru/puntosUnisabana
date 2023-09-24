@@ -3,12 +3,14 @@ package co.edu.unisabana.puntosUnisabana.controller;
 import co.edu.unisabana.puntosUnisabana.controller.DTO.ClienteDTO;
 import co.edu.unisabana.puntosUnisabana.controller.DTO.RespuestaDTO;
 import co.edu.unisabana.puntosUnisabana.logic.ClienteLogica;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
+@Tag(name = "Cliente")
 public class ClienteController {
     private ClienteLogica clienteLogica;
 
