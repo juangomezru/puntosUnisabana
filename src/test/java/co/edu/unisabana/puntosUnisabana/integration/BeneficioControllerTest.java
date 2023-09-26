@@ -1,4 +1,4 @@
-package co.edu.unisabana.puntosUnisabana.integracion;
+package co.edu.unisabana.puntosUnisabana.integration;
 
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
