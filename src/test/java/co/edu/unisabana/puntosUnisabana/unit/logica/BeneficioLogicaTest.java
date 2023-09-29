@@ -33,7 +33,7 @@ public class BeneficioLogicaTest {
     }
 
     @Test
-    public void testListaBeneficios() {
+    public void Entonces_mostrarListaBeneficios() {
         List<BeneficioModelo> beneficios = new ArrayList<>();
         List<ClienteModelo> clientes= new ArrayList<>();
         List<ClienteModelo> clientes2= new ArrayList<>();
@@ -58,7 +58,7 @@ public class BeneficioLogicaTest {
     }
 
     @Test
-    public void testBuscarBeneficio() {
+    public void Dado_cliente_Entonces_buscarBeneficio() {
         List<ClienteModelo> clientes= new ArrayList<>();
         ClienteModelo cliente1 = new ClienteModelo(1234, "Juan","sssss",null);
 
@@ -80,7 +80,7 @@ public class BeneficioLogicaTest {
     }
 
     @Test
-    public void testObtenerPuntosBeneficio() {
+    public void Dado_cliente_Entonces_mostrarPuntosBeneficio() {
         List<ClienteModelo> clientes= new ArrayList<>();
         ClienteModelo cliente1 = new ClienteModelo(1234, "Juan","sssss",null);
         clientes.add(cliente1);
@@ -101,7 +101,7 @@ public class BeneficioLogicaTest {
     }
 
     @Test
-    public void testGuardarBeneficio() {
+    public void Entonces_guardarBeneficio() {
 
         BeneficioDTO beneficioDTO = new BeneficioDTO("Beneficio 1", 100, 1);
 
