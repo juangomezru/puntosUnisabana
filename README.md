@@ -1,11 +1,30 @@
 
-# API fidelización clientes
+# API fidelización clientes:
+### Este proyecto pretende crear un backend para que la empresa UniSabana pueda manejar los puntos de sus clientes.
 
 ## Proyecto hecho con:
 [![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/what-is-corretto-17.html)
 [![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/index.html)
 [![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)](https://dev.mysql.com/doc/)
 [![Intellij IDEA](https://img.shields.io/badge/IntelliJ_IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)](https://www.jetbrains.com/idea/)
+
+## Como correr
+### 1. Haga clone de este proyecto en la carpeta deseada
+```
+gh repo clone juangomezru/puntosUnisabana
+```
+### 2. Muevase hasta la carpeta libs
+```
+./puntosUnisabana\build\libs
+```
+### 3. Abra una terminal en esta carpeta.
+
+### 4. Corra el siguiente codigo.
+```
+java -jar .\puntosUnisabana-0.0.1-SNAPSHOT.jar
+```
+### 5. Por defecto la aplicación se iniciará en el puerto 8080, puede usar el postman en docs para probarla
+
 
 
 
