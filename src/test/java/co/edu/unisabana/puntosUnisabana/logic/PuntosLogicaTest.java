@@ -44,7 +44,7 @@ public class PuntosLogicaTest {
     }
 
     @Test
-    public void testExisteClienteEnPuntos() {
+    public void Dado_cliente_Entonces_buscar() {
         ClienteModelo cliente1 = new ClienteModelo(1234, "Juan", "sssss", null);
         ClienteModelo cliente2 = new ClienteModelo(5678, "Maria", "ddd", null);
         List<PuntosModelo> puntos = new ArrayList<>();
@@ -64,7 +64,7 @@ public class PuntosLogicaTest {
     }
 
     @Test
-    public void testBuscarClientePuntos() {
+    public void Dado_cedulaCliente_Entonces_buscarAfiliacion() {
         ClienteModelo cliente1 = new ClienteModelo(1234, "Juan", "sssss", null);
         ClienteModelo cliente2 = new ClienteModelo(5678, "Maria", "ddd", null);
         List<PuntosModelo> puntos = new ArrayList<>();
