@@ -18,6 +18,7 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 public class PuntosLogicaTest {
 
+
     private PuntosRepository repo;
     private PuntosLogica logica;
 

@@ -66,11 +66,13 @@ public class ClienteLogica {
 
     public void redimirBeneficio(int cedulaCliente, int idBeneficio) {
 
-        if (puntosLogica.existeClienteEnPuntos(buscarCliente(cedulaCliente)) && (beneficiosLogica.buscarBeneficio(idBeneficio) != null)) {
+        BeneficioModelo beneficio = beneficiosLogica.buscarBeneficio(idBeneficio);
+        ClienteModelo cliente = buscarCliente(cedulaCliente);
+        if (puntosLogica.existeClienteEnPuntos(cliente) && (beneficio != null)) {
             if (verificarPuntos(cedulaCliente, idBeneficio)) {
                 descontarPuntos(cedulaCliente, idBeneficio);
                 guardarBeneficios(cedulaCliente, idBeneficio);
-                gestionClienteTransaccion.transaccion(buscarCliente(cedulaCliente), beneficiosLogica.buscarBeneficio(idBeneficio));
+                gestionClienteTransaccion.transaccion(cliente, beneficio);
             } else throw new IllegalArgumentException("No tiene puntos para ese beneficio");
         } else {
             throw new NoSuchElementException("El cliente no esta registrado en puntos o no existe el beneficio");
@@ -96,10 +98,11 @@ public class ClienteLogica {
     }
 
     public void acumularPuntos(int cedulaCliente, int valorCompra) {
+        ClienteModelo cliente = buscarCliente(cedulaCliente);
         final int ratioPuntos = 1000;
-        if (puntosLogica.existeClienteEnPuntos(buscarCliente(cedulaCliente))) {
-            int numeroPuntos = Math.round((float) valorCompra / ratioPuntos) + puntosLogica.buscarClientePuntos(buscarCliente(cedulaCliente));
-            puntosLogica.actualizarPuntos(numeroPuntos, buscarCliente(cedulaCliente));
+        if (puntosLogica.existeClienteEnPuntos(cliente)) {
+            int numeroPuntos = Math.round((float) valorCompra / ratioPuntos) + puntosLogica.buscarClientePuntos(cliente);
+            puntosLogica.actualizarPuntos(numeroPuntos, cliente);
         } else {
             throw new IllegalArgumentException("Esta cedula no esta registrada en puntos");
         }
@@ -124,4 +127,5 @@ public class ClienteLogica {
             afiliarCliente(cedula);
         } else throw new NoSuchElementException("El cliente no se encuentra registrado");
     }
+
 }
