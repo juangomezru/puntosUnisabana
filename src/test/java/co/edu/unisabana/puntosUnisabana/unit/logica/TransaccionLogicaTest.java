@@ -34,7 +34,7 @@ public class TransaccionLogicaTest {
     }
 
     @Test
-    public void testObtenerTransacciones() {
+    public void Entonces_todasTransacciones() {
         List<TransaccionModelo> transacciones = new ArrayList<>();
         transacciones.add(new TransaccionModelo(1, "Beneficio 1", new ClienteModelo(1234, "Juan","sssss",null), 100, LocalDate.now()));
         transacciones.add(new TransaccionModelo(2,"Beneficio 2", new ClienteModelo(5678, "Maria","ddd",null),  50, LocalDate.now()));
@@ -45,7 +45,7 @@ public class TransaccionLogicaTest {
     }
 
     @Test
-    public void testObtenerTransaccionesDTO() {
+    public void Entonces_transaccionesDTO() {
 
         List<TransaccionModelo> transacciones = new ArrayList<>();
         transacciones.add(new TransaccionModelo(1, "Beneficio 1", new ClienteModelo(1234, "Juan","sssss",null), 100, LocalDate.now()));
@@ -64,7 +64,7 @@ public class TransaccionLogicaTest {
     }
 
     @Test
-    public void testConsultarTransaccion() {
+    public void Dado_cedulaCliente_Entonces_consultarTransaccion() {
         List<TransaccionModelo> transacciones = new ArrayList<>();
         transacciones.add(new TransaccionModelo(1, "Beneficio 1", new ClienteModelo(1234, "Juan","sssss",null), 100, LocalDate.now()));
         transacciones.add(new TransaccionModelo(2,"Beneficio 2", new ClienteModelo(5678, "Maria","ddd",null),  50, LocalDate.now()));
