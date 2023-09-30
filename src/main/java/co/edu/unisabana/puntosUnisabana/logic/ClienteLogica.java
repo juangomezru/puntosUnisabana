@@ -2,13 +2,13 @@ package co.edu.unisabana.puntosUnisabana.logic;
 
 import co.edu.unisabana.puntosUnisabana.controller.DTO.BeneficioDTO;
 import co.edu.unisabana.puntosUnisabana.controller.DTO.ClienteDTO;
-import co.edu.unisabana.puntosUnisabana.service.IGestionClienteTransaccion;
 import co.edu.unisabana.puntosUnisabana.model.BeneficioModelo;
 import co.edu.unisabana.puntosUnisabana.model.ClienteModelo;
 import co.edu.unisabana.puntosUnisabana.model.PuntosModelo;
 import co.edu.unisabana.puntosUnisabana.repository.BeneficioRepository;
 import co.edu.unisabana.puntosUnisabana.repository.ClienteRepository;
 import co.edu.unisabana.puntosUnisabana.repository.PuntosRepository;
+import co.edu.unisabana.puntosUnisabana.service.IGestionClienteTransaccion;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -123,7 +123,7 @@ public class ClienteLogica {
         ClienteModelo cliente = buscarCliente(cedula);
         if (puntosLogica.existeClienteEnPuntos(cliente)) {
             throw new IllegalArgumentException("El cliente ya se encuentra afiliado");
-        } else if (buscarCliente(cedula) != null) {
+        } else if (cliente != null) {
             afiliarCliente(cedula);
         } else throw new NoSuchElementException("El cliente no se encuentra registrado");
     }

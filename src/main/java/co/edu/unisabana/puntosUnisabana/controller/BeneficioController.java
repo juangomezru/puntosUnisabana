@@ -72,12 +72,8 @@ public class BeneficioController {
     )
     @PostMapping(path = "/beneficio/agregar")
     public RespuestaDTO<String> agregarBeneficio(@RequestBody BeneficioDTO beneficioDTO) {
-        try {
-            beneficioLogica.guardarBeneficio(beneficioDTO);
-            return new RespuestaDTO<>("Beneficio agregado correctamente");
-        } catch (IllegalArgumentException e) {
-            return new RespuestaDTO<>("El beneficio no se pudo agregar " + e.getMessage());
-        }
+        beneficioLogica.guardarBeneficio(beneficioDTO);
+        return new RespuestaDTO<>("Beneficio agregado correctamente");
     }
 
 }
