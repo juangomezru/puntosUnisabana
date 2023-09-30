@@ -1,8 +1,6 @@
-package co.edu.unisabana.puntosUnisabana.unit.logica;
+package co.edu.unisabana.puntosUnisabana.logic;
 
 import co.edu.unisabana.puntosUnisabana.controller.DTO.BeneficioDTO;
-import co.edu.unisabana.puntosUnisabana.logic.BeneficiosLogica;
-import co.edu.unisabana.puntosUnisabana.logic.ClienteLogica;
 import co.edu.unisabana.puntosUnisabana.model.BeneficioModelo;
 import co.edu.unisabana.puntosUnisabana.model.ClienteModelo;
 import co.edu.unisabana.puntosUnisabana.repository.BeneficioRepository;
@@ -10,7 +8,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,15 +32,15 @@ public class BeneficioLogicaTest {
     @Test
     public void Entonces_mostrarListaBeneficios() {
         List<BeneficioModelo> beneficios = new ArrayList<>();
-        List<ClienteModelo> clientes= new ArrayList<>();
-        List<ClienteModelo> clientes2= new ArrayList<>();
-        ClienteModelo cliente1 = new ClienteModelo(1234, "Juan","sssss",null);
-        ClienteModelo cliente2 = new ClienteModelo(5678, "Maria","ddd",null);
+        List<ClienteModelo> clientes = new ArrayList<>();
+        List<ClienteModelo> clientes2 = new ArrayList<>();
+        ClienteModelo cliente1 = new ClienteModelo(1234, "Juan", "sssss", null);
+        ClienteModelo cliente2 = new ClienteModelo(5678, "Maria", "ddd", null);
         clientes.add(cliente1);
         clientes2.add(cliente2);
 
-        beneficios.add(new BeneficioModelo(1,"Beneficio 1", 100,clientes));
-        beneficios.add(new BeneficioModelo(2,"Beneficio 2", 50, clientes2));
+        beneficios.add(new BeneficioModelo(1, "Beneficio 1", 100, clientes));
+        beneficios.add(new BeneficioModelo(2, "Beneficio 2", 50, clientes2));
 
         when(repo.findAll()).thenReturn(beneficios);
 
@@ -59,12 +56,12 @@ public class BeneficioLogicaTest {
 
     @Test
     public void Dado_cliente_Entonces_buscarBeneficio() {
-        List<ClienteModelo> clientes= new ArrayList<>();
-        ClienteModelo cliente1 = new ClienteModelo(1234, "Juan","sssss",null);
+        List<ClienteModelo> clientes = new ArrayList<>();
+        ClienteModelo cliente1 = new ClienteModelo(1234, "Juan", "sssss", null);
 
         clientes.add(cliente1);
 
-        BeneficioModelo beneficio1 = new BeneficioModelo(1,"Beneficio 1", 100, clientes);
+        BeneficioModelo beneficio1 = new BeneficioModelo(1, "Beneficio 1", 100, clientes);
 
         when(repo.findById(1)).thenReturn(Optional.of(beneficio1));
         when(repo.findById(3)).thenReturn(Optional.empty());
@@ -81,12 +78,12 @@ public class BeneficioLogicaTest {
 
     @Test
     public void Dado_cliente_Entonces_mostrarPuntosBeneficio() {
-        List<ClienteModelo> clientes= new ArrayList<>();
-        ClienteModelo cliente1 = new ClienteModelo(1234, "Juan","sssss",null);
+        List<ClienteModelo> clientes = new ArrayList<>();
+        ClienteModelo cliente1 = new ClienteModelo(1234, "Juan", "sssss", null);
         clientes.add(cliente1);
 
 
-        BeneficioModelo beneficio1 = new BeneficioModelo(1,"Beneficio 1", 100, clientes);
+        BeneficioModelo beneficio1 = new BeneficioModelo(1, "Beneficio 1", 100, clientes);
 
 
         when(repo.findById(1)).thenReturn(Optional.of(beneficio1));
@@ -113,7 +110,7 @@ public class BeneficioLogicaTest {
 
         logica.guardarBeneficio(beneficioDTO);
 
-        verify(repo).save(new BeneficioModelo(1,"Beneficio 1", 100, null));
+        verify(repo).save(new BeneficioModelo(1, "Beneficio 1", 100, null));
     }
 }
 

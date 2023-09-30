@@ -1,6 +1,5 @@
-package co.edu.unisabana.puntosUnisabana.unit.logica;
+package co.edu.unisabana.puntosUnisabana.logic;
 
-import co.edu.unisabana.puntosUnisabana.logic.PuntosLogica;
 import co.edu.unisabana.puntosUnisabana.model.ClienteModelo;
 import co.edu.unisabana.puntosUnisabana.model.PuntosModelo;
 import co.edu.unisabana.puntosUnisabana.repository.PuntosRepository;
@@ -31,8 +30,8 @@ public class PuntosLogicaTest {
     @Test
     public void Entonces_mostrarPuntos() {
         List<PuntosModelo> puntos = new ArrayList<>();
-        puntos.add(new PuntosModelo(1,new ClienteModelo(1234, "Juan","sssss",null), 100));
-        puntos.add(new PuntosModelo(2,new ClienteModelo(5678, "Maria","ddd",null), 50));
+        puntos.add(new PuntosModelo(1, new ClienteModelo(1234, "Juan", "sssss", null), 100));
+        puntos.add(new PuntosModelo(2, new ClienteModelo(5678, "Maria", "ddd", null), 50));
 
         when(repo.findAll()).thenReturn(puntos);
 
@@ -46,17 +45,17 @@ public class PuntosLogicaTest {
 
     @Test
     public void testExisteClienteEnPuntos() {
-        ClienteModelo cliente1 = new ClienteModelo(1234, "Juan","sssss",null);
-        ClienteModelo cliente2 = new ClienteModelo(5678, "Maria","ddd",null);
+        ClienteModelo cliente1 = new ClienteModelo(1234, "Juan", "sssss", null);
+        ClienteModelo cliente2 = new ClienteModelo(5678, "Maria", "ddd", null);
         List<PuntosModelo> puntos = new ArrayList<>();
-        puntos.add(new PuntosModelo(1,cliente1, 100));
-        puntos.add(new PuntosModelo(2,cliente2, 50));
+        puntos.add(new PuntosModelo(1, cliente1, 100));
+        puntos.add(new PuntosModelo(2, cliente2, 50));
 
         when(repo.findAll()).thenReturn(puntos);
 
         boolean resultado1 = logica.existeClienteEnPuntos(cliente1);
 
-        boolean resultado2 = logica.existeClienteEnPuntos(new ClienteModelo(9999, "Pedro","aaaa",null));
+        boolean resultado2 = logica.existeClienteEnPuntos(new ClienteModelo(9999, "Pedro", "aaaa", null));
 
         verify(repo, times(2)).findAll();
 
@@ -66,17 +65,17 @@ public class PuntosLogicaTest {
 
     @Test
     public void testBuscarClientePuntos() {
-        ClienteModelo cliente1 = new ClienteModelo(1234, "Juan","sssss",null);
-        ClienteModelo cliente2 = new ClienteModelo(5678, "Maria","ddd",null);
+        ClienteModelo cliente1 = new ClienteModelo(1234, "Juan", "sssss", null);
+        ClienteModelo cliente2 = new ClienteModelo(5678, "Maria", "ddd", null);
         List<PuntosModelo> puntos = new ArrayList<>();
-        puntos.add(new PuntosModelo(1,cliente1, 100));
-        puntos.add(new PuntosModelo(2,cliente2, 50));
+        puntos.add(new PuntosModelo(1, cliente1, 100));
+        puntos.add(new PuntosModelo(2, cliente2, 50));
 
         when(repo.findAll()).thenReturn(puntos);
 
         int resultado1 = logica.buscarClientePuntos(cliente1);
 
-        int resultado2 = logica.buscarClientePuntos(new ClienteModelo(9999, "Pedro","aaaa",null));
+        int resultado2 = logica.buscarClientePuntos(new ClienteModelo(9999, "Pedro", "aaaa", null));
 
         verify(repo, times(2)).findAll();
 
@@ -86,14 +85,15 @@ public class PuntosLogicaTest {
 
     @Test
     public void Dado_cliente_Entonces_actualizarPuntos() {
-        ClienteModelo cliente1 = new ClienteModelo(1234, "Juan","sssss",null);
-        ClienteModelo cliente2 = new ClienteModelo(5678, "Maria","ddd",null);
+        ClienteModelo cliente1 = new ClienteModelo(1234, "Juan", "sssss", null);
+        ClienteModelo cliente2 = new ClienteModelo(5678, "Maria", "ddd", null);
         List<PuntosModelo> puntos = new ArrayList<>();
-        puntos.add(new PuntosModelo(1,cliente1, 100));
-        puntos.add(new PuntosModelo(2,cliente2, 50));
+        puntos.add(new PuntosModelo(1, cliente1, 100));
+        puntos.add(new PuntosModelo(2, cliente2, 50));
 
         when(repo.findAll()).thenReturn(puntos);
 
         logica.actualizarPuntos(200, cliente1);
-        verify(repo).save(new PuntosModelo(1,cliente1,200));
-    }}
+        verify(repo).save(new PuntosModelo(1, cliente1, 200));
+    }
+}

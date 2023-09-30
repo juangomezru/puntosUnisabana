@@ -112,13 +112,13 @@
 ## Diagramas
 
 ### Componentes
-<img src = "\diagramas\Componentes.png">
+<img src = "\docs\Componentes.png">
 
 ### Paquetes
-<img src = "\diagramas\Paquetes.png">
+<img src = "\docs\Paquetes.png">
 
 ### ERD
-<img src = "\diagramas\ERM.png">
+<img src = "\docs\ERM.png">
 
 
 

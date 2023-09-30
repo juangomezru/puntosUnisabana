@@ -1,10 +1,7 @@
-package co.edu.unisabana.puntosUnisabana.unit.logica;
+package co.edu.unisabana.puntosUnisabana.logic;
 
 import co.edu.unisabana.puntosUnisabana.controller.DTO.BeneficioDTO;
 import co.edu.unisabana.puntosUnisabana.controller.DTO.ClienteDTO;
-import co.edu.unisabana.puntosUnisabana.logic.BeneficiosLogica;
-import co.edu.unisabana.puntosUnisabana.logic.ClienteLogica;
-import co.edu.unisabana.puntosUnisabana.logic.PuntosLogica;
 import co.edu.unisabana.puntosUnisabana.model.BeneficioModelo;
 import co.edu.unisabana.puntosUnisabana.model.ClienteModelo;
 import co.edu.unisabana.puntosUnisabana.model.PuntosModelo;
@@ -83,10 +80,9 @@ public class ClienteLogicaTest {
     public void testBuscarClienteDTO() {
 
         ClienteModelo cliente1 = new ClienteModelo(1234, "Juan", "juan@example.com", new ArrayList<>());
-        List<ClienteModelo> clientes= new ArrayList<>();
+        List<ClienteModelo> clientes = new ArrayList<>();
         clientes.add(cliente1);
-        cliente1.getBeneficios().add(new BeneficioModelo(1,"Beneficio 1", 100, clientes));
-
+        cliente1.getBeneficios().add(new BeneficioModelo(1, "Beneficio 1", 100, clientes));
 
 
         when(clienteRepo.findById(1234)).thenReturn(Optional.of(cliente1));
@@ -132,9 +128,9 @@ public class ClienteLogicaTest {
     }
 
     @Test
-    public void Dado_() {
+    public void Dado_beneficiosYCliente_Cuando_clienteExiste_Entonces_beneficiosAgregados() {
         BeneficioModelo beneficioModelo = new BeneficioModelo(1, "Beneficio 1", 100, null);
-        List<BeneficioModelo> beneficios= new ArrayList<>();
+        List<BeneficioModelo> beneficios = new ArrayList<>();
         beneficios.add(beneficioModelo);
         ClienteModelo clienteModelo = new ClienteModelo(1234, "Juan", "juan@example.com", beneficios);
 
@@ -153,8 +149,7 @@ public class ClienteLogicaTest {
     }
 
     @Test
-    public void Dado_cliente_Entonces_afiliar()
-    {
+    public void Dado_cliente_Entonces_afiliar() {
         ClienteModelo clienteModelo = new ClienteModelo(1234, "Juan", "juan@example.com", null);
 
         when(clienteRepo.findById(1234)).thenReturn(Optional.of(clienteModelo));
@@ -198,9 +193,23 @@ public class ClienteLogicaTest {
         logica.existeClienteEnPuntos(1234);
 
         verify(puntosLogica).existeClienteEnPuntos(cliente);
-
     }
 
+    @Test
+    public void Dado_clienteExistenteEnPuntos_Entonces_throwIllegalArgumentException() {
+        ClienteModelo cliente = new ClienteModelo(1234, "Juan", "juan@example.com", new ArrayList<>());
+        when(clienteRepo.findById(1234)).thenReturn(Optional.of(cliente));
+        when(puntosLogica.existeClienteEnPuntos(cliente)).thenReturn(true);
 
+        assertThrows(IllegalArgumentException.class, () ->
+                logica.existeClienteEnPuntos(cliente.getCedula()));
+    }
+
+    @Test
+    public void Dado_clienteNoExiste_cuando_registraEnPuntos_Entonces_throwNoSuchElementExeption() {
+        int cedula = 123456789;
+        when(clienteRepo.findById(cedula)).thenReturn(Optional.empty());
+        assertThrows(NoSuchElementException.class, () -> logica.existeClienteEnPuntos(cedula));
+    }
 
 }

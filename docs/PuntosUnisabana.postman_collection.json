@@ -1,0 +1,254 @@
+{
+	"info": {
+		"_postman_id": "a89e5f91-2e7e-4664-977a-a115eb540b3d",
+		"name": "PuntosUnisabana",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29355729",
+		"_collection_link": "https://restless-shuttle-649457.postman.co/workspace/New-Team-Workspace~46417745-e31f-458c-8326-fc0bb1f072ce/collection/29355729-a89e5f91-2e7e-4664-977a-a115eb540b3d?action=share&source=collection_link&creator=29355729"
+	},
+	"item": [
+		{
+			"name": "AgregarCliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cedula\": 242211,\r\n    \"nombre\": \"Judi2\",\r\n    \"email\": \"juan2@unisabana.edu.co\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cliente/agregar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"agregar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AfiliarCliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cliente/afiliacion/242209",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"afiliacion",
+						"242209"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Compras",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cedula\": 1001286060,\r\n    \"nombre\": \"Juan Diego Gomez\",\r\n    \"email\": \"juangoru@unisabana.edu.co\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cliente/compra/puntos?cedulaCliente=242211&valorCompra=200000000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"compra",
+						"puntos"
+					],
+					"query": [
+						{
+							"key": "cedulaCliente",
+							"value": "242211"
+						},
+						{
+							"key": "valorCompra",
+							"value": "200000000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RedimirBeneficio",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cedula\": 1001286060,\r\n    \"nombre\": \"Juan Diego Gomez\",\r\n    \"email\": \"juangoru@unisabana.edu.co\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cliente/redimir?cedulaCliente=242211&idBeneficio=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"redimir"
+					],
+					"query": [
+						{
+							"key": "cedulaCliente",
+							"value": "242211"
+						},
+						{
+							"key": "idBeneficio",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AgregarBeneficio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreBeneficio\": \"$20000\",\r\n    \"puntosRequeridos\": 20000\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/beneficio/agregar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"beneficio",
+						"agregar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Beneficios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/beneficios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"beneficios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscarCliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cliente/242208",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"242208"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transacciones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/transacciones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transacciones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarTranscciones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/transacciones/clientes/buscar?cedula=242211",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transacciones",
+						"clientes",
+						"buscar"
+					],
+					"query": [
+						{
+							"key": "cedula",
+							"value": "242211"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

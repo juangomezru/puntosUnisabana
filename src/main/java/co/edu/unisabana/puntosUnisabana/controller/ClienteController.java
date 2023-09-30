@@ -248,10 +248,6 @@ public class ClienteController {
     )
     @GetMapping(path = "/cliente/{cedula}")
     public RespuestaDTO<List<ClienteDTO>> buscarCliente(@PathVariable int cedula) {
-        try {
-            return new RespuestaDTO<>("Se encontro a cliente", clienteLogica.buscarClienteDTO(cedula));
-        } catch (Exception e) {
-            return new RespuestaDTO<>("No se encontro un cliente");
-        }
+        return new RespuestaDTO<>("Se encontro a cliente", clienteLogica.buscarClienteDTO(cedula));
     }
 }
