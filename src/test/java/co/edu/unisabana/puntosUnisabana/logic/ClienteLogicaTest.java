@@ -77,7 +77,7 @@ public class ClienteLogicaTest {
     }
 
     @Test
-    public void testBuscarClienteDTO() {
+    public void Dado_cedulaCliente_Entonces_buscarClienteDTO() {
 
         ClienteModelo cliente1 = new ClienteModelo(1234, "Juan", "juan@example.com", new ArrayList<>());
         List<ClienteModelo> clientes = new ArrayList<>();
@@ -102,7 +102,7 @@ public class ClienteLogicaTest {
     }
 
     @Test
-    public void Dado_clienteNoExistente_entonces_Guardar() {
+    public void Dado_clienteNoExistente_Cuando_guarda_Entonces_Guardar() {
 
         ClienteDTO clienteDTO = new ClienteDTO(1234, "Juan", "juan@example.com", null);
 
@@ -115,7 +115,7 @@ public class ClienteLogicaTest {
     }
 
     @Test
-    public void Dado_clienteExistente_entonces_DenegarGuardado() {
+    public void Dado_clienteExistente_Cuando_guarda_Entonces_DenegarGuardado() {
         ClienteDTO clienteDTO = new ClienteDTO(1234, "Juan", "juan@example.com", null);
 
         when(clienteRepo.findById(1234)).thenReturn(Optional.of(new ClienteModelo()));
