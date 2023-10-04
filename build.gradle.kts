@@ -61,6 +61,7 @@ tasks.withType<JacocoReport> {
 				exclude("**/model/**")
 				exclude("**/service/**")
 				exclude("**/PuntosUnisabanaApplication.class/**")
+				exclude("**/configuration/**")
 			}
 	)
 }

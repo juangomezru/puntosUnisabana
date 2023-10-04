@@ -30,7 +30,7 @@ public class BeneficioLogicaTest {
     }
 
     @Test
-    public void Entonces_mostrarListaBeneficios() {
+    public void Cuando_buscar_Entonces_mostrarListaBeneficios() {
         List<BeneficioModelo> beneficios = new ArrayList<>();
         List<ClienteModelo> clientes = new ArrayList<>();
         List<ClienteModelo> clientes2 = new ArrayList<>();
@@ -98,7 +98,7 @@ public class BeneficioLogicaTest {
     }
 
     @Test
-    public void Entonces_guardarBeneficio() {
+    public void Cuando_guardar_Entonces_guardarBeneficio() {
 
         BeneficioDTO beneficioDTO = new BeneficioDTO("Beneficio 1", 100, 1);
 
