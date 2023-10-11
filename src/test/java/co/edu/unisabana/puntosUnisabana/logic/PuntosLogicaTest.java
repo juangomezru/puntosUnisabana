@@ -28,7 +28,7 @@ public class PuntosLogicaTest {
     }
 
     @Test
-    public void Cuando_buscarCliente_Entonces_mostrarPuntos() {
+    void Cuando_buscarCliente_Entonces_mostrarPuntos() {
         List<PuntosModelo> puntos = new ArrayList<>();
         puntos.add(new PuntosModelo(1, new ClienteModelo(1234, "Juan", "sssss", null), 100));
         puntos.add(new PuntosModelo(2, new ClienteModelo(5678, "Maria", "ddd", null), 50));
@@ -44,7 +44,7 @@ public class PuntosLogicaTest {
     }
 
     @Test
-    public void Dado_cliente_Cuando_buscarCliente_Entonces_puntos() {
+    void Dado_cliente_Cuando_buscarCliente_Entonces_puntos() {
         ClienteModelo cliente1 = new ClienteModelo(1234, "Juan", "sssss", null);
         ClienteModelo cliente2 = new ClienteModelo(5678, "Maria", "ddd", null);
         List<PuntosModelo> puntos = new ArrayList<>();
@@ -64,7 +64,7 @@ public class PuntosLogicaTest {
     }
 
     @Test
-    public void Dado_cedulaCliente_Entonces_buscarAfiliacion() {
+    void Dado_cedulaCliente_Entonces_buscarAfiliacion() {
         ClienteModelo cliente1 = new ClienteModelo(1234, "Juan", "sssss", null);
         ClienteModelo cliente2 = new ClienteModelo(5678, "Maria", "ddd", null);
         List<PuntosModelo> puntos = new ArrayList<>();
@@ -84,7 +84,7 @@ public class PuntosLogicaTest {
     }
 
     @Test
-    public void Dado_cliente_Cuando_redime_Entonces_actualizarPuntos() {
+    void Dado_cliente_Cuando_redime_Entonces_actualizarPuntos() {
         ClienteModelo cliente1 = new ClienteModelo(1234, "Juan", "sssss", null);
         ClienteModelo cliente2 = new ClienteModelo(5678, "Maria", "ddd", null);
         List<PuntosModelo> puntos = new ArrayList<>();

@@ -56,7 +56,7 @@ public class ClienteLogicaTest {
     }
 
     @Test
-    public void Dado_cedulaCliente_Entonces_buscarCliente() {
+    void Dado_cedulaCliente_Entonces_buscarCliente() {
 
         ClienteModelo cliente1 = new ClienteModelo(1234, "Juan", "juan@example.com", new ArrayList<>());
 
@@ -77,7 +77,7 @@ public class ClienteLogicaTest {
     }
 
     @Test
-    public void Dado_cedulaCliente_Entonces_buscarClienteDTO() {
+    void Dado_cedulaCliente_Entonces_buscarClienteDTO() {
 
         ClienteModelo cliente1 = new ClienteModelo(1234, "Juan", "juan@example.com", new ArrayList<>());
         List<ClienteModelo> clientes = new ArrayList<>();
@@ -102,7 +102,7 @@ public class ClienteLogicaTest {
     }
 
     @Test
-    public void Dado_clienteNoExistente_Cuando_guarda_Entonces_Guardar() {
+    void Dado_clienteNoExistente_Cuando_guarda_Entonces_Guardar() {
 
         ClienteDTO clienteDTO = new ClienteDTO(1234, "Juan", "juan@example.com", null);
 
@@ -115,7 +115,7 @@ public class ClienteLogicaTest {
     }
 
     @Test
-    public void Dado_clienteExistente_Cuando_guarda_Entonces_DenegarGuardado() {
+    void Dado_clienteExistente_Cuando_guarda_Entonces_DenegarGuardado() {
         ClienteDTO clienteDTO = new ClienteDTO(1234, "Juan", "juan@example.com", null);
 
         when(clienteRepo.findById(1234)).thenReturn(Optional.of(new ClienteModelo()));
@@ -128,7 +128,7 @@ public class ClienteLogicaTest {
     }
 
     @Test
-    public void Dado_beneficiosYCliente_Cuando_clienteExiste_Entonces_beneficiosAgregados() {
+    void Dado_beneficiosYCliente_Cuando_clienteExiste_Entonces_beneficiosAgregados() {
         BeneficioModelo beneficioModelo = new BeneficioModelo(1, "Beneficio 1", 100, null);
         List<BeneficioModelo> beneficios = new ArrayList<>();
         beneficios.add(beneficioModelo);
@@ -149,7 +149,7 @@ public class ClienteLogicaTest {
     }
 
     @Test
-    public void Dado_cliente_Entonces_afiliar() {
+    void Dado_cliente_Entonces_afiliar() {
         ClienteModelo clienteModelo = new ClienteModelo(1234, "Juan", "juan@example.com", null);
 
         when(clienteRepo.findById(1234)).thenReturn(Optional.of(clienteModelo));
@@ -166,7 +166,7 @@ public class ClienteLogicaTest {
     }
 
     @Test
-    public void Dado_clienteYBeneficio_Entonces_acumularPuntos() {
+    void Dado_clienteYBeneficio_Entonces_acumularPuntos() {
 
         int cedulaCliente = 1234;
         int puntosAcumulados = 50;
@@ -185,7 +185,7 @@ public class ClienteLogicaTest {
     }
 
     @Test
-    public void Dado_cliente_Entonces_VerificarAfiliacion() {
+    void Dado_cliente_Entonces_VerificarAfiliacion() {
         ClienteModelo cliente = new ClienteModelo(1234, "Juan", "juan@example.com", new ArrayList<>());
         when(clienteRepo.findById(1234)).thenReturn(Optional.of(cliente));
         when(puntosLogica.existeClienteEnPuntos(cliente)).thenReturn(false);
@@ -196,7 +196,7 @@ public class ClienteLogicaTest {
     }
 
     @Test
-    public void Dado_clienteExistenteEnPuntos_Entonces_throwIllegalArgumentException() {
+    void Dado_clienteExistenteEnPuntos_Entonces_throwIllegalArgumentException() {
         ClienteModelo cliente = new ClienteModelo(1234, "Juan", "juan@example.com", new ArrayList<>());
         when(clienteRepo.findById(1234)).thenReturn(Optional.of(cliente));
         when(puntosLogica.existeClienteEnPuntos(cliente)).thenReturn(true);
@@ -206,7 +206,7 @@ public class ClienteLogicaTest {
     }
 
     @Test
-    public void Dado_clienteNoExiste_cuando_registraEnPuntos_Entonces_throwNoSuchElementExeption() {
+    void Dado_clienteNoExiste_cuando_registraEnPuntos_Entonces_throwNoSuchElementExeption() {
         int cedula = 123456789;
         when(clienteRepo.findById(cedula)).thenReturn(Optional.empty());
         assertThrows(NoSuchElementException.class, () -> logica.existeClienteEnPuntos(cedula));

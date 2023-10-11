@@ -8,6 +8,10 @@
 [![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)](https://dev.mysql.com/doc/)
 [![Intellij IDEA](https://img.shields.io/badge/IntelliJ_IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)](https://www.jetbrains.com/idea/)
 
+## Prerequisitos
+ - Java JRE1.8 o JDK 17.
+ - Navegador Web.
+
 ## Como correr
 ### 1. Haga clone de este proyecto en la carpeta deseada
 ```
@@ -19,16 +23,15 @@ gh repo clone juangomezru/puntosUnisabana
 ```
 ### 3. Abra una terminal en esta carpeta.
 
-### 4. Corra el siguiente codigo.
+### 4. Corra el siguiente código.
 ```
 java -jar .\puntosUnisabana-0.0.1-SNAPSHOT.jar
 ```
 ### 5. Por defecto la aplicación se iniciará en el puerto 8080, puede usar el postman en docs para probarla
 
-
-
-
 ## API
+
+### La api y su documentación podrá ser revisada y probada con Swagger una vez corriendo el proyecto se ingrese a la siguiente dirección: http://localhost:8080/swagger-ui/index.html#/
 
 #### Agregar Cliente
 
@@ -100,15 +103,6 @@ java -jar .\puntosUnisabana-0.0.1-SNAPSHOT.jar
 | `cedulaCliente` | `int` | **Required**. Cedula de un cliente existente |
 | `id`            | `int` | **Required**. Id del beneficio a redimir     |
 
-#### Redimir beneficios: Agregar beneficios a un cliente
-```http
-  PUT /cliente/redimir?cedulaCliente={cedula}&idBeneficio={id}
-```
-
-| Parametro       | tipo  | Description                                  |
-|:----------------|:------|:---------------------------------------------|
-| `cedulaCliente` | `int` | **Required**. Cedula de un cliente existente |
-| `id`            | `int` | **Required**. Id del beneficio a redimir     |
 
 #### Buscar transacciones: Devuelve todas las transacciones hechas para redimir puntos de todos los clientes
 ```http
