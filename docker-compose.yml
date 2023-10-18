@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: puntosClientes
+      MYSQL_USER: clientes
+      MYSQL_PASSWORD: 7ATgsDD$mUUzHkp
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: "dev_phpmyadmin"
+    restart: always
+    ports:
+      - 9090:80
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: clientes
+      PMA_PASSWORD: 7ATgsDD$mUUzHkp
+
+
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/puntosClientes
+      SPRING_DATASOURCE_USERNAME: clientes
+      SPRING_DATASOURCE_PASSWORD: 7ATgsDD$mUUzHkp
+
+volumes:
+  mysql_data:
