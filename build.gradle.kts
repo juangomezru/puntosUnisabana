@@ -39,6 +39,7 @@ dependencies {
 	testImplementation("com.h2database:h2:2.2.220")
 	implementation("com.h2database:h2:2.2.220")
 	implementation("org.springdoc:springdoc-openapi-ui:1.6.9")
+	implementation("org.springframework.boot:spring-boot-starter-security:3.1.0")
 
 }
 
