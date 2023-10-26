@@ -24,7 +24,6 @@ import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles(profiles = "test")
-@RunWith(SpringRunner.class)
 public class BeneficioControllerTest {
 
     @Autowired

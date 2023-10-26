@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
+@Profile("!test")
 @Configuration
 public class SecurityConfigApp extends WebSecurityConfigurerAdapter {
 
