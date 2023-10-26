@@ -6,6 +6,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.0.15.RELEASE"
 	id("info.solidsoft.pitest") version "1.9.11"
 	jacoco
+	id("org.sonarqube") version "4.4.1.3373"
 }
 
 group = "co.edu.unisabana"
@@ -53,8 +54,10 @@ tasks.jacocoTestReport {
 	dependsOn(tasks.test)
 	reports {
 		csv.required.set(true)
+		xml.required.set(true)
 	}
 }
+
 tasks.withType<JacocoReport> {
 	classDirectories.setFrom(
 			sourceSets.main.get().output.asFileTree.matching {
@@ -66,14 +69,27 @@ tasks.withType<JacocoReport> {
 			}
 	)
 }
+tasks.register("runCoverageAndSonarqube") {
+	dependsOn("jacocoTestReport")
+	dependsOn("sonarqube")
+}
+
 pitest {
 	junit5PluginVersion = "1.0.0"
 }
 pitest {
-	excludedClasses = listOf(
-			"**.controller.DTO**",
-			"**.model.**",
-			"**.service.**",
-			"**.PuntosUnisabanaApplication.class**"
-	)
+    excludedClasses = listOf(
+            "**.controller.DTO**",
+            "**.model.**",
+            "**.service.**",
+            "**.PuntosUnisabanaApplication.class**"
+    )
+
+}
+sonarqube {
+    properties {
+        property("sonar.projectName", "puntosUnisabana")
+		property("sonar.coverage.jacoco.xmlReportPaths", "**/jacoco/test/jacocoTestReport.xml")
+    }
+
 }
