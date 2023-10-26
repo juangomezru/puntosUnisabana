@@ -7,7 +7,6 @@ import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
 @ActiveProfiles(profiles = "test")
-@EnableWebSecurity
 class PuntosUnisabanaApplicationTests {
 
 	@Test

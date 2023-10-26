@@ -28,6 +28,7 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	testImplementation("junit:junit:4.13.1")
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
 	testCompileOnly ("org.projectlombok:lombok")
