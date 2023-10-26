@@ -28,7 +28,6 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
-	testImplementation("junit:junit:4.13.1")
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
 	testCompileOnly ("org.projectlombok:lombok")
@@ -41,7 +40,8 @@ dependencies {
 	testImplementation("com.h2database:h2:2.2.220")
 	implementation("com.h2database:h2:2.2.220")
 	implementation("org.springdoc:springdoc-openapi-ui:1.6.9")
-	implementation("org.springframework.boot:spring-boot-starter-security:3.1.0")
+	implementation("org.springframework.boot:spring-boot-starter-security:3.0.5")
+	implementation("org.springframework.boot:spring-boot-starter-web:3.1.0")
 
 }
 

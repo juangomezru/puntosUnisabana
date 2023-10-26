@@ -42,15 +42,5 @@ services:
       SPRING_DATASOURCE_USERNAME: clientes
       SPRING_DATASOURCE_PASSWORD: 7ATgsDD$mUUzHkp
 
-  sonarqube:
-    image: sonarqube:latest
-    ports:
-      - "9000:9000"
-    depends_on:
-      - springboot
-    volumes:
-      - ./sonarqube_data:/opt/sonarqube/data
-
 volumes:
   mysql_data:
-  sonarqube_data:
