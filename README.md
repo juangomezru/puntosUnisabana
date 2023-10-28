@@ -17,17 +17,13 @@
 ```
 gh repo clone juangomezru/puntosUnisabana
 ```
-### 2. Muevase hasta la carpeta libs
-```
-./puntosUnisabana\build\libs
-```
-### 3. Abra una terminal en esta carpeta.
+### 2. Abra una terminal en esta carpeta.
 
-### 4. Corra el siguiente código.
+### 3. Corra el siguiente código.
 ```
-java -jar .\puntosUnisabana-0.0.1-SNAPSHOT.jar
+docker-compose up
 ```
-### 5. Por defecto la aplicación se iniciará en el puerto 8080, puede usar el postman en docs para probarla
+### 4. Por defecto la aplicación se iniciará en el puerto 8080, puede usar el postman en docs para probarla
 
 ## API
 
