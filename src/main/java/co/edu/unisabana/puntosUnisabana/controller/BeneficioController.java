@@ -52,17 +52,21 @@ public class BeneficioController {
                                             examples = {
                                                     @ExampleObject(
                                                             name = "OK",
-                                                            value = "{\n" +
-                                                                    "  \"mensaje\": \"Beneficio agregado correctamente\",\n" +
-                                                                    "  \"data\": \"null\"\n" +
-                                                                    "}"
+                                                            value = """
+                                                            {
+                                                              "mensaje": "Beneficio agregado correctamente",
+                                                              "data": "null"
+                                                            }
+                                                            """
                                                     ),
                                                     @ExampleObject(
                                                             name = "ERROR",
-                                                            value = "{\n" +
-                                                                    "  \"mensaje\": \"El beneficio no se pudo agregar\",\n" +
-                                                                    "  \"data\": \"null\"\n" +
-                                                                    "}"
+                                                            value = """
+                                                            {
+                                                              "mensaje": "El beneficio no se pudo agregar",
+                                                              "data": "null"
+                                                            }
+                                                            """
                                                     )
                                             }
                                     )

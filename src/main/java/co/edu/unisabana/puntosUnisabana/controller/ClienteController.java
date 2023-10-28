@@ -6,7 +6,6 @@ import co.edu.unisabana.puntosUnisabana.logic.ClienteLogica;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
-import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
@@ -37,17 +36,21 @@ public class ClienteController {
                                             examples = {
                                                     @ExampleObject(
                                                             name = "OK",
-                                                            value = "{\n" +
-                                                                    "  \"mensaje\": \"Cliente agregado correctamente\",\n" +
-                                                                    "  \"data\": \"null\"\n" +
-                                                                    "}"
+                                                            value = """
+                                                            {
+                                                              "mensaje": "Cliente agregado correctamente",
+                                                              "data": "null"
+                                                            }
+                                                            """
                                                     ),
                                                     @ExampleObject(
                                                             name = "ERROR",
-                                                            value = "{\n" +
-                                                                    "  \"mensaje\": \"El cliente no se pudo agregar Ya se encuentra registrado el cliente\",\n" +
-                                                                    "  \"data\": \"null\"\n" +
-                                                                    "}"
+                                                            value = """
+                                                            {
+                                                              "mensaje": "El cliente no se pudo agregar Ya se encuentra registrado el cliente",
+                                                              "data": "null"
+                                                            }
+                                                            """
                                                     )
                                             }
                                     )
@@ -79,24 +82,30 @@ public class ClienteController {
                                             examples = {
                                                     @ExampleObject(
                                                             name = "OK",
-                                                            value = "{\n" +
-                                                                    "  \"mensaje\": \"Beneficio se pudo redimir\",\n" +
-                                                                    "  \"data\": \"null\"\n" +
-                                                                    "}"
+                                                            value = """
+                                                            {
+                                                              "mensaje": "Beneficio se pudo redimir",
+                                                              "data": "null"
+                                                            }
+                                                            """
                                                     ),
                                                     @ExampleObject(
                                                             name = "ERROR_CLIENTE",
-                                                            value = "{\n" +
-                                                                    "  \"mensaje\": \"El beneficio no se pudo redimir: No tiene puntos para ese beneficio\",\n" +
-                                                                    "  \"data\": \"null\"\n" +
-                                                                    "}"
+                                                            value = """
+                                                            {
+                                                              "mensaje": "El beneficio no se pudo redimir: No tiene puntos para ese beneficio",
+                                                              "data": "null"
+                                                            }
+                                                            """
                                                     ),
                                                     @ExampleObject(
                                                             name = "ERROR_CANJEO",
-                                                            value = "{\n" +
-                                                                    "  \"mensaje\": \"El beneficio no se pudo redimir: El cliente no esta registrado en puntos o no existe el beneficio\",\n" +
-                                                                    "  \"data\": \"null\"\n" +
-                                                                    "}"
+                                                            value = """
+                                                            {
+                                                              "mensaje": "El beneficio no se pudo redimir: El cliente no esta registrado en puntos o no existe el beneficio",
+                                                              "data": "null"
+                                                            }
+                                                            """
                                                     )
                                             }
                                     )
@@ -127,24 +136,30 @@ public class ClienteController {
                                             examples = {
                                                     @ExampleObject(
                                                             name = "OK",
-                                                            value = "{\n" +
-                                                                    "  \"mensaje\": \"El cliente se afilio correctamente\",\n" +
-                                                                    "  \"data\": \"null\"\n" +
-                                                                    "}"
+                                                            value = """
+                                                            {
+                                                              "mensaje": "El cliente se afilio correctamente",
+                                                              "data": "null"
+                                                            }
+                                                            """
                                                     ),
                                                     @ExampleObject(
                                                             name = "ERROR_DUPLICADO",
-                                                            value = "{\n" +
-                                                                    "  \"mensaje\": \"El cliente no se pudo afiliar: El cliente ya se encuentra afiliado\",\n" +
-                                                                    "  \"data\": \"null\"\n" +
-                                                                    "}"
+                                                            value = """
+                                                            {
+                                                              "mensaje": "El cliente no se pudo afiliar: El cliente ya se encuentra afiliado",
+                                                              "data": "null"
+                                                            }
+                                                            """
                                                     ),
                                                     @ExampleObject(
                                                             name = "ERROR_NOREGISTRADO",
-                                                            value = "{\n" +
-                                                                    "  \"mensaje\": \"El cliente no se pudo afiliar: El cliente no se encuentra registrado\",\n" +
-                                                                    "  \"data\": \"null\"\n" +
-                                                                    "}"
+                                                            value = """
+                                                            {
+                                                              "mensaje": "El cliente no se pudo afiliar: El cliente no se encuentra registrado",
+                                                              "data": "null"
+                                                            }
+                                                            """
                                                     ),
                                             }
                                     )
@@ -176,17 +191,21 @@ public class ClienteController {
                                             examples = {
                                                     @ExampleObject(
                                                             name = "OK",
-                                                            value = "{\n" +
-                                                                    "  \"mensaje\": \"Compra realizada exitosamente\",\n" +
-                                                                    "  \"data\": \"null\"\n" +
-                                                                    "}"
+                                                            value = """
+                                                            {
+                                                              "mensaje": "Compra realizada exitosamente",
+                                                              "data": "null"
+                                                            }
+                                                            """
                                                     ),
                                                     @ExampleObject(
                                                             name = "ERROR_NOEXISTE",
-                                                            value = "{\n" +
-                                                                    "  \"mensaje\": \"Compra no realizada: Esta cedula no esta registrada en puntos\",\n" +
-                                                                    "  \"data\": \"null\"\n" +
-                                                                    "}"
+                                                            value = """
+                                                            {
+                                                              "mensaje": "Compra no realizada: Esta cedula no esta registrada en puntos",
+                                                              "data": "null"
+                                                            }
+                                                            """
                                                     )
                                             }
                                     )
@@ -217,28 +236,32 @@ public class ClienteController {
                                             examples = {
                                                     @ExampleObject(
                                                             name = "OK",
-                                                            value = "{\n" +
-                                                                    "  \"mensaje\": \"Se encontro a cliente\",\n" +
-                                                                    "  \"data\": {\n" +
-                                                                    "  \"cedula\": 0,\n" +
-                                                                    "  \"nombre\": \"string\",\n" +
-                                                                    "  \"email\": \"string\",\n" +
-                                                                    "  \"beneficios\": [\n" +
-                                                                    "    {\n" +
-                                                                    "      \"nombreBeneficio\": \"string\",\n" +
-                                                                    "      \"puntosRequeridos\": 0,\n" +
-                                                                    "      \"codigo\": 0\n" +
-                                                                    "    }\n" +
-                                                                    "  ]\n" +
-                                                                    "}\n" +
-                                                                    "}"
+                                                            value = """
+                                                            {
+                                                              "mensaje": "Se encontro a cliente",
+                                                              "data": {
+                                                                "cedula": 0,
+                                                                "nombre": "string",
+                                                                "email": "string",
+                                                                "beneficios": [
+                                                                  {
+                                                                    "nombreBeneficio": "string",
+                                                                    "puntosRequeridos": 0,
+                                                                    "codigo": 0
+                                                                  }
+                                                                ]
+                                                              }
+                                                            }
+                                                            """
                                                     ),
                                                     @ExampleObject(
                                                             name = "ERROR_NOEXISTE",
-                                                            value = "{\n" +
-                                                                    "  \"mensaje\": \"No se encontro un cliente\",\n" +
-                                                                    "  \"data\": \"null\"\n" +
-                                                                    "}"
+                                                            value = """
+                                                            {
+                                                              "mensaje": "No se encontro un cliente",
+                                                              "data": "null"
+                                                            }
+                                                            """
                                                     )
                                             }
                                     )
