@@ -1,15 +1,29 @@
 {
 	"info": {
-		"_postman_id": "a89e5f91-2e7e-4664-977a-a115eb540b3d",
+		"_postman_id": "5370a9e6-b6be-4c78-bbb9-771c53a0ecd2",
 		"name": "PuntosUnisabana",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "29355729",
-		"_collection_link": "https://restless-shuttle-649457.postman.co/workspace/New-Team-Workspace~46417745-e31f-458c-8326-fc0bb1f072ce/collection/29355729-a89e5f91-2e7e-4664-977a-a115eb540b3d?action=share&source=collection_link&creator=29355729"
+		"_exporter_id": "29355729"
 	},
 	"item": [
 		{
 			"name": "AgregarCliente",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -22,12 +36,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/cliente/agregar",
-					"protocol": "http",
+					"raw": "https://localhost/cliente/agregar",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
 					"path": [
 						"cliente",
 						"agregar"
@@ -42,12 +55,11 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/cliente/afiliacion/242209",
-					"protocol": "http",
+					"raw": "https://localhost/cliente/afiliacion/242209",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
 					"path": [
 						"cliente",
 						"afiliacion",
@@ -72,12 +84,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/cliente/compra/puntos?cedulaCliente=242211&valorCompra=200000000",
-					"protocol": "http",
+					"raw": "https://localhost/cliente/compra/puntos?cedulaCliente=242211&valorCompra=200000000",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
 					"path": [
 						"cliente",
 						"compra",
@@ -112,12 +123,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/cliente/redimir?cedulaCliente=242211&idBeneficio=2",
-					"protocol": "http",
+					"raw": "https://localhost/cliente/redimir?cedulaCliente=242211&idBeneficio=2",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
 					"path": [
 						"cliente",
 						"redimir"
@@ -151,12 +161,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/beneficio/agregar",
-					"protocol": "http",
+					"raw": "https://localhost/beneficio/agregar",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
 					"path": [
 						"beneficio",
 						"agregar"
@@ -171,12 +180,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/beneficios",
-					"protocol": "http",
+					"raw": "https://localhost/beneficios",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
 					"path": [
 						"beneficios"
 					]
@@ -190,12 +198,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/cliente/242208",
-					"protocol": "http",
+					"raw": "https://localhost/cliente/242208",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
 					"path": [
 						"cliente",
 						"242208"
@@ -210,12 +217,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/transacciones",
-					"protocol": "http",
+					"raw": "https://localhost/transacciones",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
 					"path": [
 						"transacciones"
 					]
@@ -229,12 +235,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/transacciones/clientes/buscar?cedula=242211",
-					"protocol": "http",
+					"raw": "https://localhost/transacciones/clientes/buscar?cedula=242211",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
 					"path": [
 						"transacciones",
 						"clientes",
