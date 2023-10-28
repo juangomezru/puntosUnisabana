@@ -57,25 +57,29 @@ public class TransaccionController {
                                             examples = {
                                                     @ExampleObject(
                                                             name = "OK",
-                                                            value = "{\n" +
-                                                                    "  \"mensaje\": \"Transacciones encontradas\",\n" +
-                                                                    "  \"data\": [\n" +
-                                                                    "  {\n" +
-                                                                    "    \"idTransaccion\": 0,\n" +
-                                                                    "    \"cedula\": 0,\n" +
-                                                                    "    \"nombreBeneficio\": \"string\",\n" +
-                                                                    "    \"cantidadPuntosGastados\": 0,\n" +
-                                                                    "    \"fechaTransaccion\": \"2023-09-30\"\n" +
-                                                                    "  }\n" +
-                                                                    "]\n" +
-                                                                    "}"
+                                                            value = """
+                                                            {
+                                                              "mensaje": "Transacciones encontradas",
+                                                              "data": [
+                                                              {
+                                                                "idTransaccion": 0,
+                                                                "cedula": 0,
+                                                                "nombreBeneficio": "string",
+                                                                "cantidadPuntosGastados": 0,
+                                                                "fechaTransaccion": "2023-09-30"
+                                                              }
+                                                              ]
+                                                            }
+                                                            """
                                                     ),
                                                     @ExampleObject(
                                                             name = "ERROR",
-                                                            value = "{\n" +
-                                                                    "  \"mensaje\": \"No se obtuvieron las trasacciones: No existen transacciones para este usuario\",\n" +
-                                                                    "  \"data\": \"null\"\n" +
-                                                                    "}"
+                                                            value = """
+                                                            {
+                                                                "mensaje": "No se obtuvieron las trasacciones: No existen transacciones para este usuario",
+                                                                "data": "null"
+                                                            }
+                                                            """
                                                     )
                                             }
                                     )
