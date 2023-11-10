@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.edu.unisabana.puntosUnisabana.logic.ClienteLogicaTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2023-11-10T20:21:45" hostname="JUANGORU" time="0.419">
+  <properties/>
+  <testcase name="Dado_clienteYBeneficio_Entonces_acumularPuntos()" classname="co.edu.unisabana.puntosUnisabana.logic.ClienteLogicaTest" time="0.309"/>
+  <testcase name="Dado_clienteExistente_Cuando_guarda_Entonces_DenegarGuardado()" classname="co.edu.unisabana.puntosUnisabana.logic.ClienteLogicaTest" time="0.023"/>
+  <testcase name="Dado_cliente_Entonces_afiliar()" classname="co.edu.unisabana.puntosUnisabana.logic.ClienteLogicaTest" time="0.022"/>
+  <testcase name="Dado_cedulaCliente_Entonces_buscarClienteDTO()" classname="co.edu.unisabana.puntosUnisabana.logic.ClienteLogicaTest" time="0.01"/>
+  <testcase name="Dado_clienteNoExiste_cuando_registraEnPuntos_Entonces_throwNoSuchElementExeption()" classname="co.edu.unisabana.puntosUnisabana.logic.ClienteLogicaTest" time="0.005"/>
+  <testcase name="Dado_cliente_Entonces_VerificarAfiliacion()" classname="co.edu.unisabana.puntosUnisabana.logic.ClienteLogicaTest" time="0.005"/>
+  <testcase name="Dado_cedulaCliente_Entonces_buscarCliente()" classname="co.edu.unisabana.puntosUnisabana.logic.ClienteLogicaTest" time="0.006"/>
+  <testcase name="Dado_clienteExistenteEnPuntos_Entonces_throwIllegalArgumentException()" classname="co.edu.unisabana.puntosUnisabana.logic.ClienteLogicaTest" time="0.008"/>
+  <testcase name="Dado_beneficiosYCliente_Cuando_clienteExiste_Entonces_beneficiosAgregados()" classname="co.edu.unisabana.puntosUnisabana.logic.ClienteLogicaTest" time="0.014"/>
+  <testcase name="Dado_clienteNoExistente_Cuando_guarda_Entonces_Guardar()" classname="co.edu.unisabana.puntosUnisabana.logic.ClienteLogicaTest" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

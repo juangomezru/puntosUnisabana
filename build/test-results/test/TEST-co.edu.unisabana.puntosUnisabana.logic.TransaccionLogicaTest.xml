@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.edu.unisabana.puntosUnisabana.logic.TransaccionLogicaTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-11-10T20:21:45" hostname="JUANGORU" time="0.113">
+  <properties/>
+  <testcase name="Cuando_buscar_Entonces_transaccionesDTO()" classname="co.edu.unisabana.puntosUnisabana.logic.TransaccionLogicaTest" time="0.101"/>
+  <testcase name="Cuando_buscar_Entonces_mostrarTransacciones()" classname="co.edu.unisabana.puntosUnisabana.logic.TransaccionLogicaTest" time="0.004"/>
+  <testcase name="Dado_cedulaCliente_Cuando_busca_Entonces_consultarTransaccion()" classname="co.edu.unisabana.puntosUnisabana.logic.TransaccionLogicaTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

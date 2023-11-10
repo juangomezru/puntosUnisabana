@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.edu.unisabana.puntosUnisabana.logic.PuntosLogicaTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-11-10T20:21:45" hostname="JUANGORU" time="0.032">
+  <properties/>
+  <testcase name="Dado_cliente_Cuando_redime_Entonces_actualizarPuntos()" classname="co.edu.unisabana.puntosUnisabana.logic.PuntosLogicaTest" time="0.005"/>
+  <testcase name="Cuando_buscarCliente_Entonces_mostrarPuntos()" classname="co.edu.unisabana.puntosUnisabana.logic.PuntosLogicaTest" time="0.004"/>
+  <testcase name="Dado_cedulaCliente_Entonces_buscarAfiliacion()" classname="co.edu.unisabana.puntosUnisabana.logic.PuntosLogicaTest" time="0.011"/>
+  <testcase name="Dado_cliente_Cuando_buscarCliente_Entonces_puntos()" classname="co.edu.unisabana.puntosUnisabana.logic.PuntosLogicaTest" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

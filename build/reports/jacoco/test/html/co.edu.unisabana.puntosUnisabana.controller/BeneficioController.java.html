@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BeneficioController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">puntosUnisabana</a> &gt; <a href="index.source.html" class="el_package">co.edu.unisabana.puntosUnisabana.controller</a> &gt; <span class="el_source">BeneficioController.java</span></div><h1>BeneficioController.java</h1><pre class="source lang-java linenums">package co.edu.unisabana.puntosUnisabana.controller;
+
+import co.edu.unisabana.puntosUnisabana.controller.DTO.BeneficioDTO;
+import co.edu.unisabana.puntosUnisabana.controller.DTO.RespuestaDTO;
+import co.edu.unisabana.puntosUnisabana.logic.BeneficiosLogica;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.ExampleObject;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+@Tag(name = &quot;Beneficio&quot;)
+public class BeneficioController {
+    private BeneficiosLogica beneficioLogica;
+
+<span class="fc" id="L23">    public BeneficioController(BeneficiosLogica beneficioLogica) {</span>
+<span class="fc" id="L24">        this.beneficioLogica = beneficioLogica;</span>
+<span class="fc" id="L25">    }</span>
+
+    @Operation(
+            description = &quot;Se buscan todos los beneficios presentes en la base de datos y se muestran&quot;,
+            summary = &quot;Se muestran todos los beneficios&quot;,
+            responses = {
+                    @ApiResponse(
+                            description = &quot;Success&quot;,
+                            responseCode = &quot;200&quot;
+                    )
+            }
+    )
+    @GetMapping(path = &quot;/beneficios&quot;)
+    public List&lt;BeneficioDTO&gt; buscarBeneficios() {
+<span class="fc" id="L39">        return beneficioLogica.listaBeneficios();</span>
+    }
+
+    @Operation(
+            description = &quot;Se agrega un beneficio a la base de datos, se toman los valores por medio de un JSON&quot;,
+            summary = &quot;Agregar un beneficio&quot;,
+            responses = {
+                    @ApiResponse(
+                            description = &quot;Success&quot;,
+                            responseCode = &quot;200&quot;,
+                            content = {
+                                    @Content(
+                                            mediaType = &quot;application/json&quot;,
+                                            examples = {
+                                                    @ExampleObject(
+                                                            name = &quot;OK&quot;,
+                                                            value = &quot;&quot;&quot;
+                                                            {
+                                                              &quot;mensaje&quot;: &quot;Beneficio agregado correctamente&quot;,
+                                                              &quot;data&quot;: &quot;null&quot;
+                                                            }
+                                                            &quot;&quot;&quot;
+                                                    ),
+                                                    @ExampleObject(
+                                                            name = &quot;ERROR&quot;,
+                                                            value = &quot;&quot;&quot;
+                                                            {
+                                                              &quot;mensaje&quot;: &quot;El beneficio no se pudo agregar&quot;,
+                                                              &quot;data&quot;: &quot;null&quot;
+                                                            }
+                                                            &quot;&quot;&quot;
+                                                    )
+                                            }
+                                    )
+                            }
+                    )
+            }
+    )
+    @PostMapping(path = &quot;/beneficio/agregar&quot;)
+    public RespuestaDTO&lt;String&gt; agregarBeneficio(@RequestBody BeneficioDTO beneficioDTO) {
+<span class="fc" id="L79">        beneficioLogica.guardarBeneficio(beneficioDTO);</span>
+<span class="fc" id="L80">        return new RespuestaDTO&lt;&gt;(&quot;Beneficio agregado correctamente&quot;);</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
