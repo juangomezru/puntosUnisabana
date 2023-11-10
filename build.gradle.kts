@@ -83,7 +83,8 @@ pitest {
             "**.controller.DTO**",
             "**.model.**",
             "**.service.**",
-            "**.PuntosUnisabanaApplication.class**"
+            "**.PuntosUnisabanaApplication.class**",
+			"**.configuration.**"
     )
 
 }
