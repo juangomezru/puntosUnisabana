@@ -1,0 +1,23 @@
+name: Continous Delivery
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: mr-smithers-excellent/docker-build-push@v6
+        name: Build & push Docker image
+        with:
+          image: juangomezru/puntosunisabana
+          tags : latest
+          registry : docker.io
+          dockerfile : Dockerfile
+          username : ${{ secrets.SUPER_USUARIO }}
+          password : ${{ secrets.CLAVE }}
