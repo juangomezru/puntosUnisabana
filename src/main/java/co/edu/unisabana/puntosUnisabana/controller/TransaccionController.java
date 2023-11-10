@@ -37,11 +37,7 @@ public class TransaccionController {
     )
     @GetMapping(path = "/transacciones")
     public List<TransaccionDTO> verTransacciones() {
-        try {
             return transaccionLogica.obtenerTransaccionesDTO();
-        } catch (Exception e) {
-            return null;
-        }
     }
 
     @Operation(
@@ -94,7 +90,7 @@ public class TransaccionController {
             return new RespuestaDTO<>("Transacciones encontradas", transacciones);
 
         } catch (NoSuchElementException e) {
-            return new RespuestaDTO<>("No se obtuvieron las trasacciones: " + e.getMessage());
+            return new RespuestaDTO<>("No se obtuvieron las transacciones: " + e.getMessage());
         }
     }
 
