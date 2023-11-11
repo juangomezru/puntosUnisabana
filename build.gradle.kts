@@ -71,6 +71,8 @@ tasks.withType<JacocoReport> {
 	)
 }
 tasks.register("runCoverageAndSonarqube") {
+	description = "Runs Jacoco coverage Test and SonarQube at same time so its included in SonarQube test coverage"
+	group = JavaBasePlugin.VERIFICATION_GROUP
 	dependsOn("jacocoTestReport")
 	dependsOn("sonarqube")
 }
@@ -92,6 +94,7 @@ sonarqube {
     properties {
         property("sonar.projectName", "puntosUnisabana")
 		property("sonar.coverage.jacoco.xmlReportPaths", "**/jacoco/test/jacocoTestReport.xml")
+		property("sonar.coverage.exclusions","**/service/**, **/controller/DTO/**, **/configuration/**, **/PuntosUnisabanaApplication.java")
     }
 
 }
