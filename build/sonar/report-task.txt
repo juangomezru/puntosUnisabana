@@ -1,6 +1,0 @@
-projectKey=co.edu.unisabana:puntosUnisabana
-serverUrl=http://localhost:9000
-serverVersion=10.2.1.78527
-dashboardUrl=http://localhost:9000/dashboard?id=co.edu.unisabana%3ApuntosUnisabana
-ceTaskId=AYu8ApoK_xUB9NvgXW-g
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AYu8ApoK_xUB9NvgXW-g

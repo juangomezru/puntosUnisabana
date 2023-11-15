@@ -1,8 +1,0 @@
-GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-puntosUnisabana,co.edu.unisabana.puntosUnisabana.controller,BeneficioController,0,19,0,0,0,6,0,3,0,3
-puntosUnisabana,co.edu.unisabana.puntosUnisabana.controller,TransaccionController,0,29,0,0,0,8,0,3,0,3
-puntosUnisabana,co.edu.unisabana.puntosUnisabana.controller,ClienteController,0,85,0,0,0,20,0,6,0,6
-puntosUnisabana,co.edu.unisabana.puntosUnisabana.logic,TransaccionLogica,0,94,0,6,0,17,0,9,0,6
-puntosUnisabana,co.edu.unisabana.puntosUnisabana.logic,BeneficiosLogica,0,61,0,0,0,13,0,6,0,6
-puntosUnisabana,co.edu.unisabana.puntosUnisabana.logic,PuntosLogica,0,76,0,12,0,20,0,11,0,5
-puntosUnisabana,co.edu.unisabana.puntosUnisabana.logic,ClienteLogica,0,293,0,16,0,66,0,21,0,13
