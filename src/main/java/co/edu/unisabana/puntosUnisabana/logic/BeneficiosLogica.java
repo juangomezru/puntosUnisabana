@@ -6,7 +6,6 @@ import co.edu.unisabana.puntosUnisabana.repository.BeneficioRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class BeneficiosLogica {
