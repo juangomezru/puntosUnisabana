@@ -24,7 +24,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles(profiles = "test")
-public class TransaccionControllerTest {
+class TransaccionControllerTest {
     @Autowired
     TestRestTemplate rest;
     private BeneficioDTO beneficioDTO1 = BeneficioControllerTest.nuevoBeneficio1;

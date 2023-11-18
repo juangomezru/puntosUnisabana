@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class PuntosLogicaTest {
+class PuntosLogicaTest {
 
 
     private PuntosRepository repo;

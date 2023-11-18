@@ -25,7 +25,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class ClienteLogicaTest {
+class ClienteLogicaTest {
 
     @Mock
     private ClienteRepository clienteRepo;
@@ -201,8 +201,9 @@ public class ClienteLogicaTest {
         when(clienteRepo.findById(1234)).thenReturn(Optional.of(cliente));
         when(puntosLogica.existeClienteEnPuntos(cliente)).thenReturn(true);
 
-        assertThrows(IllegalArgumentException.class, () ->
-                logica.existeClienteEnPuntos(cliente.getCedula()));
+        int cedula = cliente.getCedula();
+
+        assertThrows(IllegalArgumentException.class, () -> logica.existeClienteEnPuntos(cedula));
     }
 
     @Test
