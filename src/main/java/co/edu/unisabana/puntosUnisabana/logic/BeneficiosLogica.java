@@ -18,7 +18,7 @@ public class BeneficiosLogica {
 
     public List<BeneficioDTO> listaBeneficios() {
         return beneficioRepository.findAll().stream().map(beneficioModelo ->
-                new BeneficioDTO(beneficioModelo.getNombreBeneficio(), beneficioModelo.getPuntosRequeridos(), beneficioModelo.getId())).collect(Collectors.toList());
+                new BeneficioDTO(beneficioModelo.getNombreBeneficio(), beneficioModelo.getPuntosRequeridos(), beneficioModelo.getId())).toList();
     }
 
     public BeneficioModelo buscarBeneficio(int id) {

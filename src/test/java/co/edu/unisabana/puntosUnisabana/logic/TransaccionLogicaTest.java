@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class TransaccionLogicaTest {
+class TransaccionLogicaTest {
     private TransaccionRepository repo;
     private TransaccionLogica logica;
 

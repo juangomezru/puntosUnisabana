@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.stream.Collectors;
 
 
 @Service
@@ -26,8 +25,8 @@ public class TransaccionLogica {
 
 
     public List<TransaccionDTO> obtenerTransaccionesDTO() {
-        return transaccionRepository.findAll().stream().map(TransaccionModelo ->
-                new TransaccionDTO(TransaccionModelo.getId(), TransaccionModelo.getCliente().getCedula(), TransaccionModelo.getNombreBeneficio(), TransaccionModelo.getCantidadPuntosGastados(), TransaccionModelo.getFechaTransaccion())).collect(Collectors.toList());
+        return transaccionRepository.findAll().stream().map(transaccionModelo ->
+                new TransaccionDTO(transaccionModelo.getId(), transaccionModelo.getCliente().getCedula(), transaccionModelo.getNombreBeneficio(), transaccionModelo.getCantidadPuntosGastados(), transaccionModelo.getFechaTransaccion())).toList();
     }
 
     public List<TransaccionDTO> consultarTransaccion(int cedula) {
@@ -43,8 +42,8 @@ public class TransaccionLogica {
         if (!editad) {
             throw new NoSuchElementException("No existen transacciones para este usuario");
         }
-        return transaccionModelos.stream().map(TransaccionModelo ->
-                new TransaccionDTO(TransaccionModelo.getId(), TransaccionModelo.getCliente().getCedula(), TransaccionModelo.getNombreBeneficio(), TransaccionModelo.getCantidadPuntosGastados(), TransaccionModelo.getFechaTransaccion())).collect(Collectors.toList());
+        return transaccionModelos.stream().map(transaccionModelo ->
+                new TransaccionDTO(transaccionModelo.getId(), transaccionModelo.getCliente().getCedula(), transaccionModelo.getNombreBeneficio(), transaccionModelo.getCantidadPuntosGastados(), transaccionModelo.getFechaTransaccion())).toList();
     }
 
 }

@@ -43,14 +43,14 @@ public class ClienteLogica {
     }
 
     public List<ClienteDTO> buscarClienteDTO(int cedula) {
-        return clienteRepository.findById(cedula).stream().map(ClienteModelo ->
-                new ClienteDTO(ClienteModelo.getCedula(), ClienteModelo.getNombre(), ClienteModelo.getEmail(),
-                        ClienteModelo.getBeneficios().stream()
+        return clienteRepository.findById(cedula).stream().map(clienteModelo ->
+                new ClienteDTO(clienteModelo.getCedula(), clienteModelo.getNombre(), clienteModelo.getEmail(),
+                        clienteModelo.getBeneficios().stream()
                                 .map(beneficioModelo -> new BeneficioDTO(
                                         beneficioModelo.getNombreBeneficio(),
                                         beneficioModelo.getPuntosRequeridos(),
                                         beneficioModelo.getId()))
-                                .collect(Collectors.toList()))).collect(Collectors.toList());
+                                .collect(Collectors.toList()))).toList();
     }
 
     public void guardarCliente(ClienteDTO clienteDTO) {
