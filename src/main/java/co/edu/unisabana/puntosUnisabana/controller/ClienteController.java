@@ -8,15 +8,17 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
+@Slf4j
 @Tag(name = "Cliente")
 public class ClienteController {
-    private ClienteLogica clienteLogica;
+    private final ClienteLogica clienteLogica;
 
 
     public ClienteController(ClienteLogica clienteLogica) {
@@ -37,20 +39,20 @@ public class ClienteController {
                                                     @ExampleObject(
                                                             name = "OK",
                                                             value = """
-                                                            {
-                                                              "mensaje": "Cliente agregado correctamente",
-                                                              "data": "null"
-                                                            }
-                                                            """
+                                                                    {
+                                                                      "mensaje": "Cliente agregado correctamente",
+                                                                      "data": "null"
+                                                                    }
+                                                                    """
                                                     ),
                                                     @ExampleObject(
                                                             name = "ERROR",
                                                             value = """
-                                                            {
-                                                              "mensaje": "El cliente no se pudo agregar Ya se encuentra registrado el cliente",
-                                                              "data": "null"
-                                                            }
-                                                            """
+                                                                    {
+                                                                      "mensaje": "El cliente no se pudo agregar Ya se encuentra registrado el cliente",
+                                                                      "data": "null"
+                                                                    }
+                                                                    """
                                                     )
                                             }
                                     )
@@ -62,8 +64,10 @@ public class ClienteController {
     public RespuestaDTO<String> guardarCliente(@RequestBody ClienteDTO clienteDTO) {
         try {
             clienteLogica.guardarCliente(clienteDTO);
+            log.info("Se agregó un nuevo cliente con cédula: {}, y correo: {}", clienteDTO.getCedula(), clienteDTO.getEmail());
             return new RespuestaDTO<>("Cliente agregado correctamente");
         } catch (IllegalArgumentException e) {
+            log.warn("No se pudo agregar el cliente debido a: {}", e.getMessage());
             return new RespuestaDTO<>("El cliente no se pudo agregar " + e.getMessage());
         }
 
@@ -83,29 +87,29 @@ public class ClienteController {
                                                     @ExampleObject(
                                                             name = "OK",
                                                             value = """
-                                                            {
-                                                              "mensaje": "Beneficio se pudo redimir",
-                                                              "data": "null"
-                                                            }
-                                                            """
+                                                                    {
+                                                                      "mensaje": "Beneficio se pudo redimir",
+                                                                      "data": "null"
+                                                                    }
+                                                                    """
                                                     ),
                                                     @ExampleObject(
                                                             name = "ERROR_CLIENTE",
                                                             value = """
-                                                            {
-                                                              "mensaje": "El beneficio no se pudo redimir: No tiene puntos para ese beneficio",
-                                                              "data": "null"
-                                                            }
-                                                            """
+                                                                    {
+                                                                      "mensaje": "El beneficio no se pudo redimir: No tiene puntos para ese beneficio",
+                                                                      "data": "null"
+                                                                    }
+                                                                    """
                                                     ),
                                                     @ExampleObject(
                                                             name = "ERROR_CANJEO",
                                                             value = """
-                                                            {
-                                                              "mensaje": "El beneficio no se pudo redimir: El cliente no esta registrado en puntos o no existe el beneficio",
-                                                              "data": "null"
-                                                            }
-                                                            """
+                                                                    {
+                                                                      "mensaje": "El beneficio no se pudo redimir: El cliente no esta registrado en puntos o no existe el beneficio",
+                                                                      "data": "null"
+                                                                    }
+                                                                    """
                                                     )
                                             }
                                     )
@@ -117,8 +121,10 @@ public class ClienteController {
     public RespuestaDTO<String> redimirBeneficio(@RequestParam int cedulaCliente, @RequestParam int idBeneficio) {
         try {
             clienteLogica.redimirBeneficio(cedulaCliente, idBeneficio);
+            log.info("Se remidió el beneficio con ID: {} para el cliente con cédula: {}", idBeneficio, cedulaCliente);
             return new RespuestaDTO<>("Beneficio se pudo redimir");
         } catch (IllegalArgumentException | NoSuchElementException e) {
+            log.warn("El beneficio no se pudo redimir con ID: {} para el cliente con cédula: {} debido a: {}", idBeneficio, cedulaCliente, e.getMessage());
             return new RespuestaDTO<>("El beneficio no se pudo redimir: " + e.getMessage());
         }
     }
@@ -137,29 +143,29 @@ public class ClienteController {
                                                     @ExampleObject(
                                                             name = "OK",
                                                             value = """
-                                                            {
-                                                              "mensaje": "El cliente se afilio correctamente",
-                                                              "data": "null"
-                                                            }
-                                                            """
+                                                                    {
+                                                                      "mensaje": "El cliente se afilio correctamente",
+                                                                      "data": "null"
+                                                                    }
+                                                                    """
                                                     ),
                                                     @ExampleObject(
                                                             name = "ERROR_DUPLICADO",
                                                             value = """
-                                                            {
-                                                              "mensaje": "El cliente no se pudo afiliar: El cliente ya se encuentra afiliado",
-                                                              "data": "null"
-                                                            }
-                                                            """
+                                                                    {
+                                                                      "mensaje": "El cliente no se pudo afiliar: El cliente ya se encuentra afiliado",
+                                                                      "data": "null"
+                                                                    }
+                                                                    """
                                                     ),
                                                     @ExampleObject(
                                                             name = "ERROR_NOREGISTRADO",
                                                             value = """
-                                                            {
-                                                              "mensaje": "El cliente no se pudo afiliar: El cliente no se encuentra registrado",
-                                                              "data": "null"
-                                                            }
-                                                            """
+                                                                    {
+                                                                      "mensaje": "El cliente no se pudo afiliar: El cliente no se encuentra registrado",
+                                                                      "data": "null"
+                                                                    }
+                                                                    """
                                                     ),
                                             }
                                     )
@@ -171,9 +177,11 @@ public class ClienteController {
     public RespuestaDTO<String> afiliarCliente(@PathVariable int cedula) {
         try {
             clienteLogica.existeClienteEnPuntos(cedula);
+            log.info("Se ha afiliado a puntos al cliente con cédula: {}", cedula);
             return new RespuestaDTO<>("El cliente se afilio correctamente");
 
         } catch (IllegalArgumentException | NoSuchElementException e) {
+            log.warn("No se pudo afiliar al cliente con cédula: {}, debido a : {}", cedula, e.getMessage());
             return new RespuestaDTO<>("El cliente no se pudo afiliar: " + e.getMessage());
         }
     }
@@ -192,20 +200,20 @@ public class ClienteController {
                                                     @ExampleObject(
                                                             name = "OK",
                                                             value = """
-                                                            {
-                                                              "mensaje": "Compra realizada exitosamente",
-                                                              "data": "null"
-                                                            }
-                                                            """
+                                                                    {
+                                                                      "mensaje": "Compra realizada exitosamente",
+                                                                      "data": "null"
+                                                                    }
+                                                                    """
                                                     ),
                                                     @ExampleObject(
                                                             name = "ERROR_NOEXISTE",
                                                             value = """
-                                                            {
-                                                              "mensaje": "Compra no realizada: Esta cedula no esta registrada en puntos",
-                                                              "data": "null"
-                                                            }
-                                                            """
+                                                                    {
+                                                                      "mensaje": "Compra no realizada: Esta cedula no esta registrada en puntos",
+                                                                      "data": "null"
+                                                                    }
+                                                                    """
                                                     )
                                             }
                                     )
@@ -217,8 +225,10 @@ public class ClienteController {
     public RespuestaDTO<String> clientPuntosCompra(@RequestParam int cedulaCliente, @RequestParam int valorCompra) {
         try {
             clienteLogica.acumularPuntos(cedulaCliente, valorCompra);
+            log.info("Se ha hecho un compra por valor de ${}, para el cliente con cédula: {}", valorCompra, cedulaCliente);
             return new RespuestaDTO<>("Compra realizada exitosamente");
         } catch (IllegalArgumentException e) {
+            log.warn("No se pudo realizar la compra para el cliente con cédula: {}, debido a: {} ", cedulaCliente, e.getMessage());
             return new RespuestaDTO<>("Compra no realizada: " + e.getMessage());
         }
     }
@@ -237,31 +247,31 @@ public class ClienteController {
                                                     @ExampleObject(
                                                             name = "OK",
                                                             value = """
-                                                            {
-                                                              "mensaje": "Se encontro a cliente",
-                                                              "data": {
-                                                                "cedula": 0,
-                                                                "nombre": "string",
-                                                                "email": "string",
-                                                                "beneficios": [
-                                                                  {
-                                                                    "nombreBeneficio": "string",
-                                                                    "puntosRequeridos": 0,
-                                                                    "codigo": 0
-                                                                  }
-                                                                ]
-                                                              }
-                                                            }
-                                                            """
+                                                                    {
+                                                                      "mensaje": "Se encontro a cliente",
+                                                                      "data": {
+                                                                        "cedula": 0,
+                                                                        "nombre": "string",
+                                                                        "email": "string",
+                                                                        "beneficios": [
+                                                                          {
+                                                                            "nombreBeneficio": "string",
+                                                                            "puntosRequeridos": 0,
+                                                                            "codigo": 0
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                    """
                                                     ),
                                                     @ExampleObject(
                                                             name = "ERROR_NOEXISTE",
                                                             value = """
-                                                            {
-                                                              "mensaje": "No se encontro un cliente",
-                                                              "data": "null"
-                                                            }
-                                                            """
+                                                                    {
+                                                                      "mensaje": "No se encontro un cliente",
+                                                                      "data": "null"
+                                                                    }
+                                                                    """
                                                     )
                                             }
                                     )

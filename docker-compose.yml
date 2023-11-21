@@ -41,6 +41,9 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/puntosClientes
       SPRING_DATASOURCE_USERNAME: clientes
       SPRING_DATASOURCE_PASSWORD: 7ATgsDD$mUUzHkp
+    volumes:
+    - ./logs:/logs
 
 volumes:
   mysql_data:
+  logs:

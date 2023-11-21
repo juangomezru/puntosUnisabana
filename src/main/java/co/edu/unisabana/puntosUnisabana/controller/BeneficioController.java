@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,9 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@Slf4j
 @Tag(name = "Beneficio")
 public class BeneficioController {
-    private BeneficiosLogica beneficioLogica;
+
+    private final BeneficiosLogica beneficioLogica;
 
     public BeneficioController(BeneficiosLogica beneficioLogica) {
         this.beneficioLogica = beneficioLogica;
@@ -37,6 +40,7 @@ public class BeneficioController {
     @GetMapping(path = "/beneficios")
     public List<BeneficioDTO> buscarBeneficios() {
         return beneficioLogica.listaBeneficios();
+
     }
 
     @Operation(
@@ -53,20 +57,20 @@ public class BeneficioController {
                                                     @ExampleObject(
                                                             name = "OK",
                                                             value = """
-                                                            {
-                                                              "mensaje": "Beneficio agregado correctamente",
-                                                              "data": "null"
-                                                            }
-                                                            """
+                                                                    {
+                                                                      "mensaje": "Beneficio agregado correctamente",
+                                                                      "data": "null"
+                                                                    }
+                                                                    """
                                                     ),
                                                     @ExampleObject(
                                                             name = "ERROR",
                                                             value = """
-                                                            {
-                                                              "mensaje": "El beneficio no se pudo agregar",
-                                                              "data": "null"
-                                                            }
-                                                            """
+                                                                    {
+                                                                      "mensaje": "El beneficio no se pudo agregar",
+                                                                      "data": "null"
+                                                                    }
+                                                                    """
                                                     )
                                             }
                                     )
@@ -77,6 +81,7 @@ public class BeneficioController {
     @PostMapping(path = "/beneficio/agregar")
     public RespuestaDTO<String> agregarBeneficio(@RequestBody BeneficioDTO beneficioDTO) {
         beneficioLogica.guardarBeneficio(beneficioDTO);
+        log.info("Se agregó un nuevo beneficio con ID: {}", beneficioDTO.getNombreBeneficio());
         return new RespuestaDTO<>("Beneficio agregado correctamente");
     }
 

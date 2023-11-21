@@ -42,6 +42,9 @@ dependencies {
 	implementation("org.springdoc:springdoc-openapi-ui:1.6.9")
 	implementation("org.springframework.boot:spring-boot-starter-security:3.0.5")
 	implementation("org.springframework.boot:spring-boot-starter-web:3.1.0")
+	implementation("org.springframework.boot:spring-boot-starter-logging")
+	implementation("org.slf4j:slf4j-api:1.7.32")
+
 
 }
 
