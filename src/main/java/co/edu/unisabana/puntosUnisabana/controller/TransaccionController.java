@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,10 +17,11 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
+@Slf4j
 @Tag(name = "Transaccion")
 public class TransaccionController {
 
-    private TransaccionLogica transaccionLogica;
+    private final TransaccionLogica transaccionLogica;
 
     public TransaccionController(TransaccionLogica transaccionLogica) {
         this.transaccionLogica = transaccionLogica;
@@ -37,7 +39,7 @@ public class TransaccionController {
     )
     @GetMapping(path = "/transacciones")
     public List<TransaccionDTO> verTransacciones() {
-            return transaccionLogica.obtenerTransaccionesDTO();
+        return transaccionLogica.obtenerTransaccionesDTO();
     }
 
     @Operation(
@@ -54,28 +56,28 @@ public class TransaccionController {
                                                     @ExampleObject(
                                                             name = "OK",
                                                             value = """
-                                                            {
-                                                              "mensaje": "Transacciones encontradas",
-                                                              "data": [
-                                                              {
-                                                                "idTransaccion": 0,
-                                                                "cedula": 0,
-                                                                "nombreBeneficio": "string",
-                                                                "cantidadPuntosGastados": 0,
-                                                                "fechaTransaccion": "2023-09-30"
-                                                              }
-                                                              ]
-                                                            }
-                                                            """
+                                                                    {
+                                                                      "mensaje": "Transacciones encontradas",
+                                                                      "data": [
+                                                                      {
+                                                                        "idTransaccion": 0,
+                                                                        "cedula": 0,
+                                                                        "nombreBeneficio": "string",
+                                                                        "cantidadPuntosGastados": 0,
+                                                                        "fechaTransaccion": "2023-09-30"
+                                                                      }
+                                                                      ]
+                                                                    }
+                                                                    """
                                                     ),
                                                     @ExampleObject(
                                                             name = "ERROR",
                                                             value = """
-                                                            {
-                                                                "mensaje": "No se obtuvieron las trasacciones: No existen transacciones para este usuario",
-                                                                "data": "null"
-                                                            }
-                                                            """
+                                                                    {
+                                                                        "mensaje": "No se obtuvieron las trasacciones: No existen transacciones para este usuario",
+                                                                        "data": "null"
+                                                                    }
+                                                                    """
                                                     )
                                             }
                                     )
@@ -87,9 +89,11 @@ public class TransaccionController {
     public RespuestaDTO<List<TransaccionDTO>> verTransaccionesPorCliente(@RequestParam int cedula) {
         try {
             List<TransaccionDTO> transacciones = transaccionLogica.consultarTransaccion(cedula);
+            log.info("Se hallaron las transacciones para el cliente con cédula: {}, las mismas son: {}", cedula, transacciones);
             return new RespuestaDTO<>("Transacciones encontradas", transacciones);
 
         } catch (NoSuchElementException e) {
+            log.warn("No se hallaron transacciones para el cliente con cédula: {}, debido a: {}", cedula, e.getMessage());
             return new RespuestaDTO<>("No se obtuvieron las transacciones: " + e.getMessage());
         }
     }

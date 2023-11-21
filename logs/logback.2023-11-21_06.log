@@ -1,0 +1,2 @@
+06:50:00.587 [https-jsse-nio-443-exec-6] INFO  c.e.u.p.c.BeneficioController - Se agregó un nuevo beneficio con ID: $20000
+06:50:37.591 [https-jsse-nio-443-exec-7] WARN  c.e.u.p.controller.ClienteController - No se pudo agregar el cliente debido a: Ya se encuentra registrado el cliente

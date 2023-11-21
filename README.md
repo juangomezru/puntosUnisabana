@@ -22,7 +22,7 @@ gh repo clone juangomezru/puntosUnisabana
 
 ### 3. Corra el siguiente código.
 ```
-docker-compose up
+docker-compose up --build
 ```
 ### 4. Por defecto la aplicación se iniciará en el puerto 443, PHPmyAdmin en el puerto 9090 y MySQL en el puerto 3306, puede usar el postman en docs para probarla
 
@@ -38,7 +38,7 @@ docker-compose up
 ### 3.2. Si usa Linux o MacOS, lo invitamos a instalar el cerificado SSL siguiendo este [tutorial](https://support.securly.com/hc/en-us/articles/206058318-How-to-install-the-Securly-SSL-certificate-on-Mac-OSX-)
 ### 4. Una vez instalado este certificado, inicie la app con docker-compose siguiendo este comando.
 ```
-docker-compose up
+docker-compose up --build
 ```
 ### 5. La app deberia inicar con normalidad, use *https://localhost/* para usar los endpoints
 ### 6. Tenga en cuenta que la app usa Basic Auth, el usuario es "user" y la contraseña "admin"
