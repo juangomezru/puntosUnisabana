@@ -31,7 +31,13 @@ public class SecurityConfig {
                         .antMatchers("/**")
                         .authenticated()
                 )
-                .httpBasic();
+                .httpBasic()
+                .and()
+                .logout(logout -> logout
+                        .logoutUrl("/logout")
+                        .invalidateHttpSession(true)
+                        .deleteCookies("JSESSIONID")
+                );
         return http.build();
     }
 }
