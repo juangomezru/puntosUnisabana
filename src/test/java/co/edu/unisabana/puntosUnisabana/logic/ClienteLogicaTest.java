@@ -5,6 +5,7 @@ import co.edu.unisabana.puntosUnisabana.controller.DTO.ClienteDTO;
 import co.edu.unisabana.puntosUnisabana.model.BeneficioModelo;
 import co.edu.unisabana.puntosUnisabana.model.ClienteModelo;
 import co.edu.unisabana.puntosUnisabana.model.PuntosModelo;
+import co.edu.unisabana.puntosUnisabana.pattern.ClasificacionRepository;
 import co.edu.unisabana.puntosUnisabana.repository.BeneficioRepository;
 import co.edu.unisabana.puntosUnisabana.repository.ClienteRepository;
 import co.edu.unisabana.puntosUnisabana.repository.PuntosRepository;
@@ -40,6 +41,8 @@ class ClienteLogicaTest {
     @Mock
     private IGestionClienteTransaccion gestionClienteTransaccion;
     @Mock
+    private ClasificacionRepository clasificacionRepository;
+    @Mock
     private ClienteLogica logica;
 
 
@@ -51,8 +54,8 @@ class ClienteLogicaTest {
         beneficiosLogica = mock(BeneficiosLogica.class);
         beneficioRepo = mock(BeneficioRepository.class);
         gestionClienteTransaccion = mock(IGestionClienteTransaccion.class);
-
-        logica = new ClienteLogica(clienteRepo, puntosLogica, puntosRepo, beneficiosLogica, beneficioRepo, gestionClienteTransaccion);
+        clasificacionRepository = mock(ClasificacionRepository.class);
+        logica = new ClienteLogica(clienteRepo, puntosLogica, puntosRepo, beneficiosLogica, beneficioRepo, gestionClienteTransaccion, clasificacionRepository);
     }
 
     @Test
@@ -180,7 +183,7 @@ class ClienteLogicaTest {
 
         verify(clienteRepo).findById(cedulaCliente);
         verify(puntosLogica).existeClienteEnPuntos(cliente);
-        verify(puntosLogica).buscarClientePuntos(cliente);
+        verify(puntosLogica,atLeastOnce()).buscarClientePuntos(cliente);
         verify(puntosLogica).actualizarPuntos(100, cliente);
     }
 

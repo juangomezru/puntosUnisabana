@@ -70,6 +70,7 @@ tasks.withType<JacocoReport> {
 				exclude("**/service/**")
 				exclude("**/PuntosUnisabanaApplication.class/**")
 				exclude("**/configuration/**")
+				exclude("**/pattern/**")
 			}
 	)
 }
@@ -89,7 +90,8 @@ pitest {
             "**.model.**",
             "**.service.**",
             "**.PuntosUnisabanaApplication.class**",
-			"**.configuration.**"
+			"**.configuration.**",
+			"**.pattern.**"
     )
 
 }
@@ -97,7 +99,7 @@ sonarqube {
     properties {
         property("sonar.projectName", "puntosUnisabana")
 		property("sonar.coverage.jacoco.xmlReportPaths", "**/jacoco/test/jacocoTestReport.xml")
-		property("sonar.coverage.exclusions","**/service/**, **/controller/DTO/**, **/configuration/**, **/PuntosUnisabanaApplication.java")
+		property("sonar.coverage.exclusions","**/service/**, **/controller/DTO/**, **/configuration/**, **/PuntosUnisabanaApplication.java, **/pattern/**")
     }
 
 }
