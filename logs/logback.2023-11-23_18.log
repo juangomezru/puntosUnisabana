@@ -1,0 +1,2 @@
+18:18:25.918 [https-jsse-nio-443-exec-2] WARN  c.e.u.p.controller.ClienteController - No se pudo agregar el cliente debido a: Ya se encuentra registrado el cliente
+18:29:11.434 [https-jsse-nio-443-exec-3] WARN  c.e.u.p.controller.ClienteController - No se pudo afiliar al cliente con cédula: 12345, debido a : El cliente ya se encuentra afiliado

@@ -15,6 +15,7 @@ public class RespuestaDTO<T> {
     }
 
     public RespuestaDTO(String mensaje, T data) {
+
         this.mensaje = mensaje;
         this.data = data;
     }

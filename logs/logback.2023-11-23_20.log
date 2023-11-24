@@ -1,0 +1,8 @@
+20:09:39.940 [https-jsse-nio-443-exec-4] INFO  c.e.u.p.controller.ClienteController - Se agregó un nuevo cliente con cédula: 54321, y correo: grmrt@gmail.com
+20:10:02.984 [https-jsse-nio-443-exec-4] INFO  c.e.u.p.controller.ClienteController - Se ha afiliado a puntos al cliente con cédula: 54321
+20:10:24.150 [https-jsse-nio-443-exec-9] INFO  c.e.u.p.controller.ClienteController - Se ha hecho un compra por valor de $4000000, para el cliente con cédula: 54321
+20:12:13.457 [https-jsse-nio-443-exec-4] INFO  c.e.u.p.c.BeneficioController - Se agregó un nuevo beneficio con ID: Lambo
+20:12:33.807 [https-jsse-nio-443-exec-9] INFO  c.e.u.p.controller.ClienteController - Se remidió el beneficio con ID: 2 para el cliente con cédula: 54321
+20:16:15.534 [https-jsse-nio-443-exec-4] INFO  c.e.u.p.c.TransaccionController - Se hallaron las transacciones para el cliente con cédula: 12345, las mismas son: [TransaccionDTO(idTransaccion=1, cedula=12345, nombreBeneficio=Scort German Ramirez, cantidadPuntosGastados=10.0, fechaTransaccion=2023-11-23)]
+20:23:24.941 [https-jsse-nio-443-exec-9] WARN  c.e.u.p.controller.ClienteController - No se pudo agregar el cliente debido a: Ya se encuentra registrado el cliente
+20:24:40.967 [https-jsse-nio-443-exec-4] WARN  c.e.u.p.controller.ClienteController - No se pudo agregar el cliente debido a: Ya se encuentra registrado el cliente
