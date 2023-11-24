@@ -213,3 +213,4 @@ mysql_data/server-cert.pem
 mysql_data/server-key.pem
 mysql_data/sys/sys_config.ibd
 mysql_data/undo_001
+/build/

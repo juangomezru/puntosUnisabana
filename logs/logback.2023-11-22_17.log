@@ -1,0 +1,1 @@
+07:01:13.660 [https-jsse-nio-443-exec-7] WARN  c.e.u.p.c.TransaccionController - No se hallaron transacciones para el cliente con cédula: 242211, debido a: No existen transacciones para este usuario

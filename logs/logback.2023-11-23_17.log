@@ -1,0 +1,56 @@
+12:20:34.711 [http-nio-auto-1-exec-2] INFO  c.e.u.p.c.BeneficioController - Se agregó un nuevo beneficio con ID: Nuevo Beneficio 1
+12:20:34.728 [http-nio-auto-1-exec-3] INFO  c.e.u.p.c.BeneficioController - Se agregó un nuevo beneficio con ID: Nuevo Beneficio 2
+12:20:34.783 [http-nio-auto-1-exec-5] INFO  c.e.u.p.c.BeneficioController - Se agregó un nuevo beneficio con ID: Nuevo Beneficio 1
+12:20:34.849 [http-nio-auto-1-exec-6] INFO  c.e.u.p.controller.ClienteController - Se agregó un nuevo cliente con cédula: 123456, y correo: juangoru@gmail.com
+12:20:34.867 [http-nio-auto-1-exec-7] WARN  c.e.u.p.controller.ClienteController - No se pudo realizar la compra para el cliente con cédula: 123456, debido a: Esta cedula no esta registrada en puntos 
+12:20:34.884 [http-nio-auto-1-exec-8] INFO  c.e.u.p.controller.ClienteController - Se agregó un nuevo cliente con cédula: 12, y correo: juangoru@gmail.com
+12:20:34.906 [http-nio-auto-1-exec-9] INFO  c.e.u.p.controller.ClienteController - Se ha afiliado a puntos al cliente con cédula: 12
+12:20:34.922 [http-nio-auto-1-exec-10] INFO  c.e.u.p.controller.ClienteController - Se ha hecho un compra por valor de $1000, para el cliente con cédula: 12
+12:20:34.932 [http-nio-auto-1-exec-1] INFO  c.e.u.p.c.BeneficioController - Se agregó un nuevo beneficio con ID: Nuevo Beneficio 1
+12:20:34.976 [http-nio-auto-1-exec-2] INFO  c.e.u.p.controller.ClienteController - Se remidió el beneficio con ID: 1 para el cliente con cédula: 12
+12:20:34.992 [http-nio-auto-1-exec-3] INFO  c.e.u.p.controller.ClienteController - Se agregó un nuevo cliente con cédula: 1234, y correo: juangoru@gmail.com
+12:20:35.004 [http-nio-auto-1-exec-4] INFO  c.e.u.p.controller.ClienteController - Se ha afiliado a puntos al cliente con cédula: 1234
+12:20:35.018 [http-nio-auto-1-exec-5] WARN  c.e.u.p.controller.ClienteController - No se pudo agregar el cliente debido a: Ya se encuentra registrado el cliente
+12:20:35.027 [http-nio-auto-1-exec-6] WARN  c.e.u.p.controller.ClienteController - No se pudo agregar el cliente debido a: Ya se encuentra registrado el cliente
+12:20:35.039 [http-nio-auto-1-exec-7] WARN  c.e.u.p.controller.ClienteController - No se pudo agregar el cliente debido a: Ya se encuentra registrado el cliente
+12:20:35.050 [http-nio-auto-1-exec-8] WARN  c.e.u.p.controller.ClienteController - No se pudo afiliar al cliente con cédula: 12, debido a : El cliente ya se encuentra afiliado
+12:20:35.063 [http-nio-auto-1-exec-9] INFO  c.e.u.p.controller.ClienteController - Se ha hecho un compra por valor de $1000, para el cliente con cédula: 12
+12:20:35.073 [http-nio-auto-1-exec-10] WARN  c.e.u.p.controller.ClienteController - El beneficio no se pudo redimir con ID: 5 para el cliente con cédula: 12 debido a: El cliente no esta registrado en puntos o no existe el beneficio
+12:20:35.085 [http-nio-auto-1-exec-1] WARN  c.e.u.p.controller.ClienteController - No se pudo agregar el cliente debido a: Ya se encuentra registrado el cliente
+12:20:35.093 [http-nio-auto-1-exec-2] WARN  c.e.u.p.controller.ClienteController - No se pudo afiliar al cliente con cédula: 1234, debido a : El cliente ya se encuentra afiliado
+12:20:35.102 [http-nio-auto-1-exec-3] WARN  c.e.u.p.controller.ClienteController - No se pudo afiliar al cliente con cédula: 1234, debido a : El cliente ya se encuentra afiliado
+12:20:35.115 [http-nio-auto-1-exec-4] INFO  c.e.u.p.controller.ClienteController - Se agregó un nuevo cliente con cédula: 1245, y correo: juangoru@gmail.com
+12:20:35.127 [http-nio-auto-1-exec-5] INFO  c.e.u.p.controller.ClienteController - Se ha afiliado a puntos al cliente con cédula: 1245
+12:20:35.139 [http-nio-auto-1-exec-6] INFO  c.e.u.p.controller.ClienteController - Se ha hecho un compra por valor de $1000, para el cliente con cédula: 1245
+12:20:35.147 [http-nio-auto-1-exec-7] INFO  c.e.u.p.c.BeneficioController - Se agregó un nuevo beneficio con ID: Nuevo Beneficio 2
+12:20:35.158 [http-nio-auto-1-exec-8] WARN  c.e.u.p.controller.ClienteController - El beneficio no se pudo redimir con ID: 2 para el cliente con cédula: 1245 debido a: No tiene puntos para ese beneficio
+12:20:35.169 [http-nio-auto-1-exec-9] INFO  c.e.u.p.c.BeneficioController - Se agregó un nuevo beneficio con ID: Nuevo Beneficio 1
+12:20:35.177 [http-nio-auto-1-exec-10] WARN  c.e.u.p.controller.ClienteController - El beneficio no se pudo redimir con ID: 1 para el cliente con cédula: 1 debido a: El cliente no esta registrado en puntos o no existe el beneficio
+12:20:35.188 [http-nio-auto-1-exec-1] WARN  c.e.u.p.controller.ClienteController - No se pudo agregar el cliente debido a: Ya se encuentra registrado el cliente
+12:20:35.213 [http-nio-auto-1-exec-3] INFO  c.e.u.p.controller.ClienteController - Se agregó un nuevo cliente con cédula: 12345, y correo: juangoru@gmail.com
+12:20:35.224 [http-nio-auto-1-exec-4] WARN  c.e.u.p.controller.ClienteController - No se pudo agregar el cliente debido a: Ya se encuentra registrado el cliente
+12:20:35.233 [http-nio-auto-1-exec-5] WARN  c.e.u.p.controller.ClienteController - No se pudo afiliar al cliente con cédula: 1234, debido a : El cliente ya se encuentra afiliado
+12:20:35.244 [http-nio-auto-1-exec-6] INFO  c.e.u.p.controller.ClienteController - Se ha hecho un compra por valor de $1000, para el cliente con cédula: 1234
+12:20:35.262 [http-nio-auto-1-exec-7] INFO  c.e.u.p.controller.ClienteController - Se agregó un nuevo cliente con cédula: 155, y correo: juangoru@gmail.com
+12:20:35.275 [http-nio-auto-1-exec-8] INFO  c.e.u.p.controller.ClienteController - Se ha afiliado a puntos al cliente con cédula: 155
+12:20:35.287 [http-nio-auto-1-exec-9] INFO  c.e.u.p.controller.ClienteController - Se ha hecho un compra por valor de $10000, para el cliente con cédula: 155
+12:20:35.295 [http-nio-auto-1-exec-10] INFO  c.e.u.p.c.BeneficioController - Se agregó un nuevo beneficio con ID: Nuevo Beneficio 1
+12:20:35.313 [http-nio-auto-1-exec-1] INFO  c.e.u.p.controller.ClienteController - Se remidió el beneficio con ID: 1 para el cliente con cédula: 155
+12:20:35.332 [http-nio-auto-1-exec-2] INFO  c.e.u.p.controller.ClienteController - Se remidió el beneficio con ID: 1 para el cliente con cédula: 155
+12:20:35.367 [http-nio-auto-1-exec-4] INFO  c.e.u.p.controller.ClienteController - Se agregó un nuevo cliente con cédula: 10, y correo: juangoru@gmail.com
+12:20:35.379 [http-nio-auto-1-exec-5] INFO  c.e.u.p.controller.ClienteController - Se ha afiliado a puntos al cliente con cédula: 10
+12:20:35.394 [http-nio-auto-1-exec-6] INFO  c.e.u.p.controller.ClienteController - Se ha hecho un compra por valor de $1000, para el cliente con cédula: 10
+12:20:35.401 [http-nio-auto-1-exec-7] INFO  c.e.u.p.c.BeneficioController - Se agregó un nuevo beneficio con ID: Nuevo Beneficio 1
+12:20:35.421 [http-nio-auto-1-exec-8] INFO  c.e.u.p.controller.ClienteController - Se remidió el beneficio con ID: 1 para el cliente con cédula: 10
+12:20:35.433 [http-nio-auto-1-exec-9] INFO  c.e.u.p.c.TransaccionController - Se hallaron las transacciones para el cliente con cédula: 10, las mismas son: [TransaccionDTO(idTransaccion=4, cedula=10, nombreBeneficio=Nuevo Beneficio 1, cantidadPuntosGastados=1.0, fechaTransaccion=2023-11-23)]
+12:20:35.449 [http-nio-auto-1-exec-10] INFO  c.e.u.p.controller.ClienteController - Se agregó un nuevo cliente con cédula: 16, y correo: juangoru@gmail.com
+12:20:35.464 [http-nio-auto-1-exec-1] INFO  c.e.u.p.controller.ClienteController - Se ha afiliado a puntos al cliente con cédula: 16
+12:20:35.479 [http-nio-auto-1-exec-2] INFO  c.e.u.p.controller.ClienteController - Se ha hecho un compra por valor de $1000, para el cliente con cédula: 16
+12:20:35.486 [http-nio-auto-1-exec-3] INFO  c.e.u.p.c.BeneficioController - Se agregó un nuevo beneficio con ID: Nuevo Beneficio 1
+12:20:35.495 [http-nio-auto-1-exec-4] WARN  c.e.u.p.c.TransaccionController - No se hallaron transacciones para el cliente con cédula: 16, debido a: No existen transacciones para este usuario
+17:32:22.242 [https-jsse-nio-443-exec-5] INFO  c.e.u.p.controller.ClienteController - Se agregÃ³ un nuevo cliente con cÃ©dula: 12345, y correo: eduenjoso@hotmail.com
+17:32:36.361 [https-jsse-nio-443-exec-5] INFO  c.e.u.p.controller.ClienteController - Se ha afiliado a puntos al cliente con cÃ©dula: 12345
+17:34:38.278 [https-jsse-nio-443-exec-10] INFO  c.e.u.p.controller.ClienteController - Se ha hecho un compra por valor de $400000, para el cliente con cÃ©dula: 12345
+17:35:10.079 [https-jsse-nio-443-exec-5] INFO  c.e.u.p.c.BeneficioController - Se agregÃ³ un nuevo beneficio con ID: Scort German Ramirez
+17:35:23.041 [https-jsse-nio-443-exec-10] INFO  c.e.u.p.controller.ClienteController - Se remidiÃ³ el beneficio con ID: 1 para el cliente con cÃ©dula: 12345
+17:35:42.693 [https-jsse-nio-443-exec-5] INFO  c.e.u.p.c.TransaccionController - Se hallaron las transacciones para el cliente con cÃ©dula: 12345, las mismas son: [TransaccionDTO(idTransaccion=1, cedula=12345, nombreBeneficio=Scort German Ramirez, cantidadPuntosGastados=10.0, fechaTransaccion=2023-11-23)]

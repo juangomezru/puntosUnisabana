@@ -1,1 +1,50 @@
-07:01:13.660 [https-jsse-nio-443-exec-7] WARN  c.e.u.p.c.TransaccionController - No se hallaron transacciones para el cliente con cédula: 242211, debido a: No existen transacciones para este usuario
+13:05:57.670 [http-nio-auto-1-exec-1] INFO  c.e.u.p.c.BeneficioController - Se agreg� un nuevo beneficio con ID: Nuevo Beneficio 1
+13:05:57.689 [http-nio-auto-1-exec-3] INFO  c.e.u.p.c.BeneficioController - Se agreg� un nuevo beneficio con ID: Nuevo Beneficio 2
+13:05:57.743 [http-nio-auto-1-exec-5] INFO  c.e.u.p.c.BeneficioController - Se agreg� un nuevo beneficio con ID: Nuevo Beneficio 1
+13:05:57.816 [http-nio-auto-1-exec-6] INFO  c.e.u.p.controller.ClienteController - Se agreg� un nuevo cliente con c�dula: 123456, y correo: juangoru@gmail.com
+13:05:57.841 [http-nio-auto-1-exec-8] WARN  c.e.u.p.controller.ClienteController - No se pudo realizar la compra para el cliente con c�dula: 123456, debido a: Esta cedula no esta registrada en puntos 
+13:05:57.859 [http-nio-auto-1-exec-7] INFO  c.e.u.p.controller.ClienteController - Se agreg� un nuevo cliente con c�dula: 12, y correo: juangoru@gmail.com
+13:05:57.884 [http-nio-auto-1-exec-9] INFO  c.e.u.p.controller.ClienteController - Se ha afiliado a puntos al cliente con c�dula: 12
+13:05:57.906 [http-nio-auto-1-exec-10] INFO  c.e.u.p.controller.ClienteController - Se ha hecho un compra por valor de $1000, para el cliente con c�dula: 12
+13:05:57.914 [http-nio-auto-1-exec-2] INFO  c.e.u.p.c.BeneficioController - Se agreg� un nuevo beneficio con ID: Nuevo Beneficio 1
+13:05:57.956 [http-nio-auto-1-exec-1] INFO  c.e.u.p.controller.ClienteController - Se remidi� el beneficio con ID: 1 para el cliente con c�dula: 12
+13:05:57.972 [http-nio-auto-1-exec-3] INFO  c.e.u.p.controller.ClienteController - Se agreg� un nuevo cliente con c�dula: 1234, y correo: juangoru@gmail.com
+13:05:57.987 [http-nio-auto-1-exec-4] INFO  c.e.u.p.controller.ClienteController - Se ha afiliado a puntos al cliente con c�dula: 1234
+13:05:58.000 [http-nio-auto-1-exec-5] WARN  c.e.u.p.controller.ClienteController - No se pudo agregar el cliente debido a: Ya se encuentra registrado el cliente
+13:05:58.009 [http-nio-auto-1-exec-6] WARN  c.e.u.p.controller.ClienteController - No se pudo agregar el cliente debido a: Ya se encuentra registrado el cliente
+13:05:58.023 [http-nio-auto-1-exec-8] WARN  c.e.u.p.controller.ClienteController - No se pudo agregar el cliente debido a: Ya se encuentra registrado el cliente
+13:05:58.034 [http-nio-auto-1-exec-7] WARN  c.e.u.p.controller.ClienteController - No se pudo afiliar al cliente con c�dula: 12, debido a : El cliente ya se encuentra afiliado
+13:05:58.046 [http-nio-auto-1-exec-9] INFO  c.e.u.p.controller.ClienteController - Se ha hecho un compra por valor de $1000, para el cliente con c�dula: 12
+13:05:58.057 [http-nio-auto-1-exec-10] WARN  c.e.u.p.controller.ClienteController - El beneficio no se pudo redimir con ID: 5 para el cliente con c�dula: 12 debido a: El cliente no esta registrado en puntos o no existe el beneficio
+13:05:58.072 [http-nio-auto-1-exec-2] WARN  c.e.u.p.controller.ClienteController - No se pudo agregar el cliente debido a: Ya se encuentra registrado el cliente
+13:05:58.082 [http-nio-auto-1-exec-1] WARN  c.e.u.p.controller.ClienteController - No se pudo afiliar al cliente con c�dula: 1234, debido a : El cliente ya se encuentra afiliado
+13:05:58.091 [http-nio-auto-1-exec-3] WARN  c.e.u.p.controller.ClienteController - No se pudo afiliar al cliente con c�dula: 1234, debido a : El cliente ya se encuentra afiliado
+13:05:58.107 [http-nio-auto-1-exec-4] INFO  c.e.u.p.controller.ClienteController - Se agreg� un nuevo cliente con c�dula: 1245, y correo: juangoru@gmail.com
+13:05:58.119 [http-nio-auto-1-exec-5] INFO  c.e.u.p.controller.ClienteController - Se ha afiliado a puntos al cliente con c�dula: 1245
+13:05:58.133 [http-nio-auto-1-exec-6] INFO  c.e.u.p.controller.ClienteController - Se ha hecho un compra por valor de $1000, para el cliente con c�dula: 1245
+13:05:58.141 [http-nio-auto-1-exec-8] INFO  c.e.u.p.c.BeneficioController - Se agreg� un nuevo beneficio con ID: Nuevo Beneficio 2
+13:05:58.157 [http-nio-auto-1-exec-7] WARN  c.e.u.p.controller.ClienteController - El beneficio no se pudo redimir con ID: 2 para el cliente con c�dula: 1245 debido a: No tiene puntos para ese beneficio
+13:05:58.170 [http-nio-auto-1-exec-9] INFO  c.e.u.p.c.BeneficioController - Se agreg� un nuevo beneficio con ID: Nuevo Beneficio 1
+13:05:58.180 [http-nio-auto-1-exec-10] WARN  c.e.u.p.controller.ClienteController - El beneficio no se pudo redimir con ID: 1 para el cliente con c�dula: 1 debido a: El cliente no esta registrado en puntos o no existe el beneficio
+13:05:58.194 [http-nio-auto-1-exec-2] WARN  c.e.u.p.controller.ClienteController - No se pudo agregar el cliente debido a: Ya se encuentra registrado el cliente
+13:05:58.218 [http-nio-auto-1-exec-3] INFO  c.e.u.p.controller.ClienteController - Se agreg� un nuevo cliente con c�dula: 12345, y correo: juangoru@gmail.com
+13:05:58.230 [http-nio-auto-1-exec-4] WARN  c.e.u.p.controller.ClienteController - No se pudo agregar el cliente debido a: Ya se encuentra registrado el cliente
+13:05:58.238 [http-nio-auto-1-exec-5] WARN  c.e.u.p.controller.ClienteController - No se pudo afiliar al cliente con c�dula: 1234, debido a : El cliente ya se encuentra afiliado
+13:05:58.252 [http-nio-auto-1-exec-6] INFO  c.e.u.p.controller.ClienteController - Se ha hecho un compra por valor de $1000, para el cliente con c�dula: 1234
+13:05:58.273 [http-nio-auto-1-exec-8] INFO  c.e.u.p.controller.ClienteController - Se agreg� un nuevo cliente con c�dula: 155, y correo: juangoru@gmail.com
+13:05:58.286 [http-nio-auto-1-exec-7] INFO  c.e.u.p.controller.ClienteController - Se ha afiliado a puntos al cliente con c�dula: 155
+13:05:58.298 [http-nio-auto-1-exec-9] INFO  c.e.u.p.controller.ClienteController - Se ha hecho un compra por valor de $10000, para el cliente con c�dula: 155
+13:05:58.307 [http-nio-auto-1-exec-10] INFO  c.e.u.p.c.BeneficioController - Se agreg� un nuevo beneficio con ID: Nuevo Beneficio 1
+13:05:58.330 [http-nio-auto-1-exec-2] INFO  c.e.u.p.controller.ClienteController - Se remidi� el beneficio con ID: 1 para el cliente con c�dula: 155
+13:05:58.353 [http-nio-auto-1-exec-1] INFO  c.e.u.p.controller.ClienteController - Se remidi� el beneficio con ID: 1 para el cliente con c�dula: 155
+13:05:58.402 [http-nio-auto-1-exec-4] INFO  c.e.u.p.controller.ClienteController - Se agreg� un nuevo cliente con c�dula: 10, y correo: juangoru@gmail.com
+13:05:58.417 [http-nio-auto-1-exec-5] INFO  c.e.u.p.controller.ClienteController - Se ha afiliado a puntos al cliente con c�dula: 10
+13:05:58.436 [http-nio-auto-1-exec-6] INFO  c.e.u.p.controller.ClienteController - Se ha hecho un compra por valor de $1000, para el cliente con c�dula: 10
+13:05:58.447 [http-nio-auto-1-exec-8] INFO  c.e.u.p.c.BeneficioController - Se agreg� un nuevo beneficio con ID: Nuevo Beneficio 1
+13:05:58.473 [http-nio-auto-1-exec-7] INFO  c.e.u.p.controller.ClienteController - Se remidi� el beneficio con ID: 1 para el cliente con c�dula: 10
+13:05:58.489 [http-nio-auto-1-exec-9] INFO  c.e.u.p.c.TransaccionController - Se hallaron las transacciones para el cliente con c�dula: 10, las mismas son: [TransaccionDTO(idTransaccion=4, cedula=10, nombreBeneficio=Nuevo Beneficio 1, cantidadPuntosGastados=1.0, fechaTransaccion=2023-11-24)]
+13:05:58.511 [http-nio-auto-1-exec-10] INFO  c.e.u.p.controller.ClienteController - Se agreg� un nuevo cliente con c�dula: 16, y correo: juangoru@gmail.com
+13:05:58.528 [http-nio-auto-1-exec-2] INFO  c.e.u.p.controller.ClienteController - Se ha afiliado a puntos al cliente con c�dula: 16
+13:05:58.543 [http-nio-auto-1-exec-1] INFO  c.e.u.p.controller.ClienteController - Se ha hecho un compra por valor de $1000, para el cliente con c�dula: 16
+13:05:58.552 [http-nio-auto-1-exec-3] INFO  c.e.u.p.c.BeneficioController - Se agreg� un nuevo beneficio con ID: Nuevo Beneficio 1
+13:05:58.561 [http-nio-auto-1-exec-4] WARN  c.e.u.p.c.TransaccionController - No se hallaron transacciones para el cliente con c�dula: 16, debido a: No existen transacciones para este usuario
