@@ -5,7 +5,9 @@ import co.edu.unisabana.puntosUnisabana.controller.DTO.ClienteDTO;
 import co.edu.unisabana.puntosUnisabana.model.BeneficioModelo;
 import co.edu.unisabana.puntosUnisabana.model.ClienteModelo;
 import co.edu.unisabana.puntosUnisabana.model.PuntosModelo;
+import co.edu.unisabana.puntosUnisabana.pattern.*;
 import co.edu.unisabana.puntosUnisabana.repository.BeneficioRepository;
+import co.edu.unisabana.puntosUnisabana.pattern.ClasificacionRepository;
 import co.edu.unisabana.puntosUnisabana.repository.ClienteRepository;
 import co.edu.unisabana.puntosUnisabana.repository.PuntosRepository;
 import co.edu.unisabana.puntosUnisabana.service.IGestionClienteTransaccion;
@@ -23,18 +25,18 @@ public class ClienteLogica {
     private final PuntosRepository puntosRepository;
     private final BeneficiosLogica beneficiosLogica;
     private final BeneficioRepository beneficioRepository;
-
-
     private final IGestionClienteTransaccion gestionClienteTransaccion;
+    private final ClasificacionRepository clasificacionRepository;
 
 
-    public ClienteLogica(ClienteRepository clienteRepository, PuntosLogica puntosLogica, PuntosRepository puntosRepository, BeneficiosLogica beneficiosLogica, BeneficioRepository beneficioRepository, IGestionClienteTransaccion gestionClienteTransaccion) {
+    public ClienteLogica(ClienteRepository clienteRepository, PuntosLogica puntosLogica, PuntosRepository puntosRepository, BeneficiosLogica beneficiosLogica, BeneficioRepository beneficioRepository, IGestionClienteTransaccion gestionClienteTransaccion, ClasificacionRepository clasificacionRepository) {
         this.clienteRepository = clienteRepository;
         this.puntosLogica = puntosLogica;
         this.puntosRepository = puntosRepository;
         this.beneficiosLogica = beneficiosLogica;
         this.beneficioRepository = beneficioRepository;
         this.gestionClienteTransaccion = gestionClienteTransaccion;
+        this.clasificacionRepository = clasificacionRepository;
     }
 
 
@@ -106,6 +108,8 @@ public class ClienteLogica {
         } else {
             throw new IllegalArgumentException("Esta cedula no esta registrada en puntos");
         }
+        ClasificacionLogica clasificacionLogica = new ClasificacionLogica(clasificacionRepository);
+        clasificacionLogica.clasificar(puntosLogica.buscarClientePuntos(cliente),cedulaCliente);
     }
 
     public void guardarBeneficios(int cedulaCliente, int idBeneficio) {
